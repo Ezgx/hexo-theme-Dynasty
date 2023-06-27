@@ -1,0 +1,71 @@
+- var hometop = theme.hometop
+- var fposts = theme.hometop.featured_posts
+
+.hometop
+  .hometopin
+    .blog-title
+      span.title=config.title
+    .fposts
+      .ftags
+        #category-bar.hometop_item
+          .category-bar-items#category-bar-items
+            !=getarray_bar("tag")
+          a.category-bar-more(href=url_for(fposts.tags_more_url)) 更多标签
+        #category-bar.hometop_item
+          .category-bar-items#category-bar-items
+            !=getarray_bar("category")
+          a.category-bar-more(href=url_for(fposts.categroies_more_url)) 更多分类
+      .group1
+        .recent-top-post-group#recent-top-post-group.hometop_item
+            .recent-post-top#recent-post-top
+                .topGroup#topGroup
+                    if fposts.posts 
+                        each i in fposts.posts
+                            .recent-post-item#recent-post-item
+                                .post_cover.left_radius
+                                    a(href=url_for(i.link), title=i.title)
+                                        img.post_bg.entered.loaded(src=url_for(i.cover) onerror="this.onerror=null,this.src='/img/404.png'")
+                                .recent-post-info(href=url_for(i.link))
+                                    a.article-title(href=url_for(i.link), title=i.title)= i.title
+        .hometop-creativity.hometop_item
+          .inbar
+            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+      .group2
+        .siteinfo.hometop_item
+          include widget/card_webinfo.pug
+        .descr.hometop_item
+          img(src=url_for(hometop.descr.img))
+          .subtitle subtitle
+          span=hometop.descr.subtitle
+  section.main-hero-waves-area.waves-area
+    svg.waves-svg(xmlns='http://www.w3.org/2000/svg', xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28', preserveAspectRatio='none', shape-rendering='auto')
+      defs
+        path#gentle-wave(d='M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z')
+      g.parallax
+        use(href='#gentle-wave', x='48', y='0')
+        use(href='#gentle-wave', x='48', y='3')
+        use(href='#gentle-wave', x='48', y='5')
+        use(href='#gentle-wave', x='48', y='7')

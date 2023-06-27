@@ -1,0 +1,230 @@
+.hometopin
+    max-width: 1200px
+    width: -webkit-fill-available
+    padding: 10px
+    margin: auto
+
+.fpostsline
+    height: 1.5px
+    border-radius: 20px
+    color: white
+    width: 90%
+
+.webinfo-item .item-name i
+    line-height: 2
+    margin-right: 5px
+
+.fposts .ftags
+    width: 100%
+    +maxwidth768
+        width: 100%
+
+#category-bar
+    border-radius: 15px
+    display: inline-flex !important
+    width: 49%
+    margin: 1%
+    margin-left: 0
+
+.recent-top-post-group
+    border-radius: 12px;
+    overflow: hidden;
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 0rem;
+
+.recent-post-top
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+
+.topGroup
+    display: flex;
+
+.recent-post-top .recent-post-item
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.5rem;
+    background: var(--heo-white);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
+    height: 164px;
+    max-height: 164px;
+    border: #e3e8f7;
+    transition: 0.3s;
+    position: relative;
+
+#recent-post-top .recent-post-item .post_cover
+    width: 100%;
+
+.recent-post-top .recent-post-item .recent-post-info
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem !important;
+    transition: 0.3s;
+
+.recent-post-top .recent-post-item .post_cover a
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+
+.recent-post-top .recent-post-item .recent-post-info .article-title
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    padding-top: .5rem;
+    font-weight: bold;
+    font-size: 0.8rem !important;
+    padding: 0 !important;
+
+.hometop img
+    width: 100%;
+    object-fit: cover;
+
+
+.recent-top-post-group 
+    width: 59%
+    margin-right: 1%
+    display: inline-block
+
+.hometop-creativity img
+    width: 164px !important
+    height: 100%
+    display: inline-block
+    width: 40%
+    object-fit: contain
+    padding: 20px
+    margin-right: 15px
+    border-radius: 20px
+
+.hometop-creativity
+    display: inline-flex
+    border-radius: 10px
+    overflow: hidden
+    overflow-x: scroll
+    width: 38%
+    height: 100%
+    margin-right: 2%
+    &::-webkit-scrollbar
+        display: none
+
+.hometop .group1
+    height: 164px
+    display: flex
+
+.hometop .group2
+    height: 200px
+    display: flex
+
+.hometop .descr
+    height: 100%
+    width: 69%
+    display: inline-block
+    margin-top: 13px
+    padding: 15px
+    background: #fff
+    border-radius: 15px
+
+.hometop .descr span
+    font-size: 25px
+    font-weight: 700
+    position relative
+    top -20px
+
+.hometop .descr .subtitle
+    font-size: 7px
+    top -7px
+    position relative
+
+.hometop .descr img
+    height: 70%
+    border-radius: 15px
+
+.hometop .siteinfo
+    width: 30%
+    margin-right: 1%
+    display: inline-block
+    padding: 15px
+    border-radius: 15px
+    height 100%
+    overflow-y: scroll
+    margin-top: 13px
+    background: #fff
+
+[data-theme="dark"] 
+    .hometop .siteinfo
+        background: #000
+    .hometop .descr
+        background: #000
+    .recent-post-top .recent-post-item
+        background: #000
+
+.hometop-creativity .inbar
+    animation: rowup 10s linear infinite
+    display: flex
+
+.hometop
+  content: ''
+  position: relative
+  top: -90px
+  padding-top 70px
+  background-color: var(--heo-theme)
+  width: 100%
+  height: 100%
+  background-attachment: opacity(0.1)
+  background-image: linear-gradient(
+      0deg,
+      #ffffff7a 0px,
+      #ffffff7a 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    linear-gradient(
+      90deg,
+      #ffffff7a 0px,
+      #ffffff7a 1px,
+      transparent 1px,
+      transparent 100px
+    )
+  background-size: 20px 20px
+
+.blog-title
+    width: 100%
+
+.blog-title span.title
+    font-size: 35px
+    width: 100%
+    display: block
+    font-weight: 800
+    margin-bottom: 6px
+    padding: 0 17px
+    border-bottom: 1px solid #000
+    color: #000
+
+.webinfo-item
+    display: flex
+
+.webinfo-item .item-name
+    flex: 1
+    display: inline-flex
+
+.webinfo-item .item-count
+    position: relative
+    display: inline-block
+    right: 0
+
+div#recent-post-top::-webkit-scrollbar
+    display: none
+
+.skills-style-group.hometop-creativity
+    width: 40%
+    display: inline-block
+

@@ -1,0 +1,43 @@
+.search-dialog
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1001
+  display: none
+  padding: 20px
+  width: 100%
+  border-radius: 8px
+
+  hr
+    margin: 20px auto
+
+  .search-nav
+    margin: 0 0 14px
+    color: $search-color
+    font-size: 1.4em
+    line-height: 1
+
+    .search-dialog-title
+      margin-right: 10px
+
+    .search-close-button
+      float: right
+      color: $grey
+      transition: color .2s ease-in-out
+
+      &:hover
+        color: $search-color
+
+#search-mask
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1000
+  display: none
+  background: #ffffff7a
+
+[data-theme="dark"]
+  #search-mask
+    background: #0000007a

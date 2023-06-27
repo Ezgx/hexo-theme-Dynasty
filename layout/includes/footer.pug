@@ -1,0 +1,52 @@
+#footer_deal
+  if theme.footer.footer_icons.enable
+      each i in theme.footer.footer_icons.left
+        if i.class == "in"
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else if i.class == "out"
+          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else 
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+  img.footer_mini_logo.entered.loading(title='返回顶部' onclick='btf.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')
+  if theme.footer.footer_icons.enable
+      each i in theme.footer.footer_icons.right 
+        if i.class == "in"
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else if i.class == "out"
+          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+        else 
+          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+            i(class=`${i.icon}`)
+#Jay-footer
+  each item in theme.footer.footer_group.footer_group_link
+    .footer-group
+        h3.footer-title=item.group_title
+            .footer-links
+              each i in item.footer_links
+                if i.class == "in"
+                  a.footer-item(href=`${i.link}`)=i.text
+                else if i.class == "out"
+                  a.footer-item(target='_blank', href=`${i.link}`)=i.text
+                else 
+                  a.footer-item(href=`${i.link}`)=i.text
+#footer-banner
+  .footer-banner-links
+    .footer-banner-left
+      .footer-banner-left
+        #footer-banner-tips=`${theme.footer.text}`
+
+    .footer-banner-right
+      a.footer-banner-link(href="https://hexo.io/zh-cn/" title="Hexo") 框架：Hexo
+      a.footer-banner-link |
+      a.footer-banner-link(href="/2023/dimension" title="theme") 主题：dimension
+      a.footer-banner-link |
+      a.footer-banner-link(href="/about/" title="about") 关于
+      a.footer-banner-link |
+      a.footer-banner-link.cc(href="/cc/" title="cc协议")
+        i.fab.fa-creative-commons
+        span 协议。
