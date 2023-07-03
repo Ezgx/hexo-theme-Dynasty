@@ -1,0 +1,54 @@
+#console_open_close_btn
+    position: fixed
+    border-radius: 100vh
+    width: 40px
+    height 40px
+    padding: 4px
+    z-index: 10002
+    background: var(--heo-theme)
+    bottom: 97px
+    border: 2px solid #e3e8f7
+    right: 7px
+
+[data-theme="dark"] #console_open_close_btn
+    border: 2px solid #3d3d3f
+
+#console_open_close_btn i
+    line-height: 2
+    position: relative
+    bottom: 7%
+    align-items: center
+    display: flex
+    justify-content: center
+    color: #3d3d3d
+
+#console-pannel
+    position: fixed
+    bottom: 145px
+    display: block
+    z-index: 10002
+    background: var(--heo-theme)
+    transition: right .5s
+    color: #3d3d3d
+    width: 115px
+    right: -115px
+    height: fit-content
+    padding: 10px
+    border-radius: 20px
+    font-weight: 600
+    border: 2px solid #e3e8f7
+
+[data-theme="dark"] #console-pannel
+    border: 2px solid #3d3d3f
+
+#console-pannel .console-item .console-button
+    display: flex
+
+#console-pannel .console-item .console-button i
+    flex: 1
+    margin-right: 4px
+    line-height: 2
+
+#console-pannel .close-button
+    right: 20px
+    position: absolute

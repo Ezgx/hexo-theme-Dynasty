@@ -26,11 +26,6 @@
     font-weight: 700;
 }
 
-#post-info .post-title {
-    text-shadow: 2px 1px black;
-    font-weight: 700;
-}
-
 [data-theme="dark"]
   #post .post-copyright {
     background-color: rgb(7 8 10);
@@ -85,22 +80,13 @@
     margin: 3px;
     border-bottom: 2px solid #ff7a7a;
 }
-
-li.card-category-list-item, li.card-archive-list-item {
-    width: 48%;
-    background: #ff7a7abf;
-    border-radius: 9px;
-    margin-bottom: 2%;
-    margin-right: 2%;
-    display: inline-block;
-}
-
 hrl.line {
     height: 0;
     box-sizing: content-box;
-    border: 2px dashed #ff7a7a;
+    border: 2px dashed var(--heo-theme);
     position: relative;
     width: 100%;
+    display: block;
 }
 .recent-post-item {
     border: 1.5px solid #e3e8f7;
@@ -165,3 +151,4 @@ main#content-inner {
 .post main#content-inner {
   padding-top: 50px;
 }
+

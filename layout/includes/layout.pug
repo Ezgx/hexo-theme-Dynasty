@@ -8,7 +8,12 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
   head
     include ./head.pug
     link(rel="stylesheet", href="/css/color.css")
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css")
+    link(rel='preload' as='font' type='font/ttf' href='/font/alifangyuan.ttf' crossorigin='anonymous')
     link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+    script(async='' data-pjax='' src="/js/vue-bar.js") 
+    script(async='' src='/js/vue.min.js')
+    script(async='' src='/js/element-ui.js')
   body
     script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
     if theme.preloader.enable
@@ -32,6 +37,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             block content
             if theme.aside.enable && page.aside !== false
               include widget/index.pug
+              if (is_page())
+                block content
 
         - var footerBg = theme.footer_bg
         if (footerBg)
@@ -55,6 +62,26 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       i.fas.fa-arrow-up
       span#percent 0
       include ./waves.pug
-    script(async='' data-pjax='' src="/js/scroll.js") 
-    script(src="/js/random.js")
+    #console_open_close_btn(onclick='showconsolebtn()')
+      i.fas.fa-gear.fa-spin
+    #console-pannel
+      | 控制台
+      .console-item
+        .console-button(onclick='hideaside()')
+          i.fas.fa-arrows-alt-h
+          .text 侧栏隐显
+      .console-item
+        .console-button(onclick='toggleTheme()')
+          i.fas.fa-adjust
+          .text 暗色模式
+      .console-item
+        .console-button(onclick='hidehometop()')
+          i.fas.fa-grip-vertical
+          .text 顶部隐显
+      .console-item
+        .console-button(onclick='toRandomPost()')
+          i.fas.fa-shuffle
+          .text 随机文章
     script(src="/js/custom.js")
+    script(src="/js/scroll.js") 
+    script(src="/js/random.js")

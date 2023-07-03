@@ -7,11 +7,11 @@
       span.title=config.title
     .fposts
       .ftags
-        #category-bar.hometop_item
-          .category-bar-items#category-bar-items
+        #tag-bar.hometop_item.bar
+          .tag-bar-items#tag-bar-items
             !=getarray_bar("tag")
-          a.category-bar-more(href=url_for(fposts.tags_more_url)) 更多标签
-        #category-bar.hometop_item
+          a.tag-bar-more(href=url_for(fposts.tags_more_url)) 更多标签
+        #category-bar.hometop_item.bar
           .category-bar-items#category-bar-items
             !=getarray_bar("category")
           a.category-bar-more(href=url_for(fposts.categroies_more_url)) 更多分类

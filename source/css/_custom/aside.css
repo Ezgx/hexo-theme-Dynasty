@@ -6,7 +6,7 @@
 /* 作者打招呼 */
 div#author-info__sayhi {
   text-align: left;
-  color: var(--heo-white);
+  color: #3d3d3d;
   background: var(--heo-white-op);
   font-size: 12px;
   margin-right: auto;
@@ -18,7 +18,7 @@ div#author-info__sayhi {
 #aside-content .card-info .author-info__name {
   text-align: left;
   font-weight: bold;
-  color: var(--heo-white);
+  color: #3d3d3d;
   font-size: 28px;
   line-height: 1.1;
   margin-top: 0.8rem;
@@ -30,7 +30,7 @@ div#author-info__sayhi {
   transition: 0.3s;
   border: none;
   box-shadow: none;
-  background: #425AEF !important;
+  background: var(--heo-theme) !important;
   margin-top: 0px;
 }
 
@@ -83,7 +83,7 @@ div#author-info__sayhi {
 }
 
 #aside-content>div.card-widget.card-info>div>div.card-info-avatar.is-center>div.author-info__description b {
-  color: var(--heo-white);
+  color: #3d3d3d;
 }
 
 /* 作者卡片描述2 */
@@ -93,11 +93,11 @@ div#author-info__sayhi {
   text-align: justify;
   width: 100%;
   z-index: 2;
-  color: rgba(255, 255, 255, 0.8);
+  color: #3d3d3d;
 }
 
 .author-info__description2 b {
-  color: var(--heo-white);
+  color: #3d3d3d;
 }
 
 .card-widget.card-info .banner-button-group {
@@ -111,7 +111,7 @@ div#author-info__sayhi {
   padding: 8px 12px;
   background: var(--heo-white-op);
   border-radius: 12px;
-  color: var(--heo-white);
+  color: #3d3d3d;
   display: flex;
   align-items: center;
   z-index: 1;

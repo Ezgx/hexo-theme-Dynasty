@@ -1,0 +1,10 @@
+@font-face{
+    font-family:'alifont' ;  /* 字体名自定义即可 */
+    src:url('/font/alifangyuan.ttf'); /* 字体文件路径 */
+    font-display : swap;
+}
+body {
+    font-family: alifont;
+    font-size: 17px;
+    font-weight: 600;
+}

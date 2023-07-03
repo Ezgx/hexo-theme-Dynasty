@@ -47,7 +47,7 @@ div
       -webkit-transition all 0.28s ease
       -o-transition all 0.28s ease
       margin 8px
-      margin-top calc(1.25 * 16px + 32px)
+      margin-top calc(1.25 * 16px + 32px) !important
       min-width 120px
       font-weight bold
       display flex
@@ -83,6 +83,11 @@ div.btns p,
 div.btns a
   font-size 0.8125rem
   color #555
+  height 50px
+  margin-bottom: 20px
+
+.btns.grid5
+    height: auto
 
 @media screen and (max-width: 1024px)
   div
@@ -177,7 +182,7 @@ div.btns a > i:first-child
   height 64px
   width 64px
   box-shadow 0 1px 2px 0 rgba(0, 0, 0, 0.1)
-  margin 16px 8px 4px 8px
+  margin -48px 8px 4px 8px !important
   margin-top calc(-1.25 * 16px - 32px)
   border 2px solid #fff
   background #fff

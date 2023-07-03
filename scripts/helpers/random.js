@@ -6,6 +6,6 @@ hexo.extend.generator.register('random', function (locals) {
     }
     return {
         path: config.path || 'js/random.js',
-        data: `var posts=${JSON.stringify(posts)};function toRandomPost(){window.open('/'+posts[Math.floor(Math.random() * posts.length)],"_self");};`
+        data: `var posts=${JSON.stringify(posts)};function toRandomPost(){window.open('/'+posts[Math.floor(Math.random() * posts.length)],"_self");btf.snackbarShow('正在跳转', false, 3000);};`
     }
 })

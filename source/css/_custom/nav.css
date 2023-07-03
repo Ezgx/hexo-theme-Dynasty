@@ -1,5 +1,5 @@
 #nav a:hover {
-  background: var(--anzhiyu-main);
+  background: var(--heo-theme);
   transition: 0.3s;
 }
 
@@ -9,7 +9,7 @@
 #nav-totop #percent {
   font-size: 12px;
   background: var(--anzhiyu-white);
-  color: var(--anzhiyu-main);
+  color: var(--heo-theme);
   width: 25px;
   height: 25px;
   border-radius: 35px;
@@ -65,7 +65,6 @@ div#menus {
 }
 #page-header #nav .nav-button a {
   height: 35px;
-  width: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +162,7 @@ ul.menus_item_child {
 @media screen and (min-width: 768px) {
   .page .menus_item:hover > a.site-page {
     color: var(--anzhiyu-white) !important;
-    background: var(--anzhiyu-main);
+    background: var(--heo-theme);
     transition: 0.3s;
     box-shadow: var(--anzhiyu-shadow-main);
   }
@@ -173,7 +172,7 @@ ul.menus_item_child {
   transform: translateY(58px) !important;
 }
 #nav {
-  padding: 0 calc((100% - 1420px) / 2);
+  padding: 15px !important;
   backdrop-filter: saturate(180%) blur(20px);
 }
 
@@ -183,7 +182,7 @@ ul.menus_item_child {
 }
 .page #nav a:hover {
   color: var(--anzhiyu-white) !important;
-  background: var(--anzhiyu-main);
+  background: var(--heo-theme);
   transition: 0.3s;
   box-shadow: var(--anzhiyu-shadow-main);
 }
@@ -222,18 +221,26 @@ ul.menus_item_child {
   top: 0;
   left: 0;
   content: "回到顶部";
-  background-color: var(--anzhiyu-theme);
+  background-color: var(--heo-theme);
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   opacity: 0;
-  box-shadow: 0 0 3px var(--anzhiyu-theme);
+  box-shadow: 0 0 3px var(--heo-theme);
   line-height: 45px; /*如果垂直位置不居中可以微调此值，也可以删了*/
 }
 #page-name:hover:before {
   opacity: 1;
+}
+.search-button-text {
+  display: flex;
+  padding: 0 7px 0 5px;
+}
+.search-button-text i {
+  line-height: 2;
+  margin-right: 3px;
 }
 #name-container {
   transition: all 0.3s;
@@ -318,7 +325,7 @@ center#name-container {
 }
 
 .back-home-button:hover {
-  background: var(--anzhiyu-main);
+  background: var(--heo-theme);
   color: var(--anzhiyu-white) !important;
 }
 .back-home-button {
@@ -379,7 +386,7 @@ center#name-container {
 }
 
 .back-home-button .back-menu-list-group:hover .back-menu-list-title {
-  color: var(--anzhiyu-main);
+  color: var(--heo-theme);
 }
 .back-home-button .back-menu-list-groups:hover {
   border: var(--style-border-hover);
@@ -456,9 +463,6 @@ center#name-container {
   padding: 0;
 }
 #page-header:not(.is-top-bar) #nav-totop a {
-  display: none;
-}
-#search-button a.site-page.social-icon.search span {
   display: none;
 }
 #page-header.nav-visible #nav {

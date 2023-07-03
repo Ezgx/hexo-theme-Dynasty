@@ -810,7 +810,7 @@
   }
   .author-content-item .card-content .banner-button-group .banner-button:hover i {
     background: var(--anzhiyu-background) !important;
-    color: var(--anzhiyu-theme);
+    color: var(--heo-theme);
   }
   #selfInfo-content-year {
     width: 90px;

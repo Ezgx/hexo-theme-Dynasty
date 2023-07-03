@@ -1,0 +1,54 @@
+/* 消息弹窗 */
+.snackbar-container {
+    background: var(--heo-main) !important;
+    color: var(--heo-white) !important;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center !important;
+    max-width: none !important;
+    min-width: 100% !important;
+    margin: 0px !important;
+    left: 0px !important;
+    height: 60px !important;
+    transform: none !important;
+  }
+  .snackbar-container p {
+    font-weight: 600 !important;
+    text-align: center !important;
+    color: #3d3d3d !important;
+    font-size: 18px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .snackbar-container .action {
+    color: var(--heo-white) !important;
+    padding: 4px 6px !important;
+    font-weight: bold;
+    border-radius: 8px !important;
+    transition: 0.3s;
+    border: var(--style-border) !important;
+  }
+  .snackbar-container .action:hover {
+    color: var(--heo-main) !important;
+    background: var(--heo-white) !important;
+  }
+  .snackbar-container::after {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--heo-white);
+    opacity: 0.1;
+    content: "";
+    animation: snackbar-progress 2s linear forwards;
+    pointer-events: none;
+  }
+  @keyframes snackbar-progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }

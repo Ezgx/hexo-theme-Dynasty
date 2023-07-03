@@ -32,9 +32,16 @@ hexo.extend.helper.register('cloudTags', function (options = {}) {
     source = source.limit(limit)
   }
 
+  const sizes = []
+  source.sort('length').forEach(tag => {
+    const { length } = tag
+    if (sizes.includes(length)) return
+    sizes.push(length)
+  })
+
   source.forEach(tag => {
-    const color = 'rgb(' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ', ' + Math.floor(Math.random() * 201) + ')' // 0,0,0 -> 200,200,200
-    style += ` color: ${color}`
+    let style = `20px;`
+    style
     result += `<a href="${env.url_for(tag.path)}" style="${style}">${tag.name}</a>`
   })
   return result

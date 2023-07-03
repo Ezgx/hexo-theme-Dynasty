@@ -6,7 +6,7 @@
   left: 0;
   position: relative;
   bottom: -11px;
-  top: 10px;
+  top: 12px;
   z-index: 5;
 }
 .waves-area .waves-svg {
@@ -70,5 +70,5 @@
 }
 
 .post-bg .main-hero-waves-area {
-  top: 320px !important;
+  top: 420px !important;
 }

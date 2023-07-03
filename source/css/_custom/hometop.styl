@@ -19,7 +19,7 @@
     +maxwidth768
         width: 100%
 
-#category-bar
+.hometop_item.bar
     border-radius: 15px
     display: inline-flex !important
     width: 49%
@@ -161,11 +161,11 @@
 
 [data-theme="dark"] 
     .hometop .siteinfo
-        background: #000
+        background: #18171D
     .hometop .descr
-        background: #000
+        background: #18171D
     .recent-post-top .recent-post-item
-        background: #000
+        background: #18171D
 
 .hometop-creativity .inbar
     animation: rowup 10s linear infinite
@@ -176,25 +176,15 @@
   position: relative
   top: -90px
   padding-top 70px
-  background-color: var(--heo-theme)
+  background-color: var(--hometop-bg)
   width: 100%
   height: 100%
-  background-attachment: opacity(0.1)
-  background-image: linear-gradient(
-      0deg,
-      #ffffff7a 0px,
-      #ffffff7a 1px,
-      transparent 1px,
-      transparent 100px
-    ),
-    linear-gradient(
-      90deg,
-      #ffffff7a 0px,
-      #ffffff7a 1px,
-      transparent 1px,
-      transparent 100px
-    )
-  background-size: 20px 20px
+  background-attachment: fixed
+  background-image: 
+    radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%),
+    radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%)
+  background-position: 0px 0px, 24px 24px
+  background-size: 48px 48px
 
 .blog-title
     width: 100%
@@ -228,3 +218,8 @@ div#recent-post-top::-webkit-scrollbar
     width: 40%
     display: inline-block
 
+#recent-posts
+    margin-top: -50px
+
+#aside-content, #post
+    margin-top: -33px

@@ -33,32 +33,51 @@ function percent() {
 
 document.getElementById("page-name").innerText = document.title.split(" | blog")[0];
 
-let dys = {
-  switchDarkMode: function() {
-    "light" === ("dark" === document.documentElement.getAttribute("data-theme") ? "dark" : "light") ? (activateDarkMode(),
-    saveToLocal.set("theme", "dark", 2),
-    void 0 !== GLOBAL_CONFIG.Snackbar && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)) : (activateLightMode(),
-    saveToLocal.set("theme", "light", 2),
-    void 0 !== GLOBAL_CONFIG.Snackbar && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)),
-    "function" == typeof utterancesTheme && utterancesTheme(),
-    "object" == typeof FB && window.loadFBComment(),
-    window.DISQUS && document.getElementById("disqus_thread").children.length && setTimeout((()=>window.disqusReset()), 200)
-  },
-}
-
 function toggleTheme() {
   var currentTheme = document.documentElement.getAttribute("data-theme");
   var targetTheme = currentTheme === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", targetTheme);
+  btf.snackbarShow('切换成功', false, 3000)
 }
 
-function hideAsideBtn() {
-  const e = document.documentElement.classList;
-  const $htmlDom = document.documentElement.classList
-  e.contains("hide-aside") ? saveToLocal.set("aside-status", "show", 2) : saveToLocal.set("aside-status", "hide", 2),
-  e.toggle("hide-aside"),
-      $htmlDom.contains('hide-aside')
-        ? saveToLocal.set('aside-status', 'show', 2)
-        : saveToLocal.set('aside-status', 'hide', 2)
-      $htmlDom.toggle('hide-aside')
+function showconsolebtn() {
+  var consolebtn = document.getElementById('console-pannel');
+  if (consolebtn.style.right === '7px') {
+    consolebtn.style.right = '-115px';
+  } else {
+    consolebtn.style.right = '7px'
+  }
+}
+
+function hideaside() {
+  var aside = document.getElementById('aside-content');
+  var postmodule = document.getElementsByClassName('maininner')[0];
+  if (aside.style.display === 'none') {
+    aside.style.display = 'block';
+    postmodule.style.width = '74%';
+    btf.snackbarShow('已显示侧边栏', false, 3000)
+  }
+  else {
+    aside.style.display = 'none';
+    postmodule.style.width = '100%';
+    btf.snackbarShow('已隐藏侧边栏', false, 3000)
+  }
+}
+
+function hidehometop() {
+  var hometop = document.getElementsByClassName('hometop')[0];
+  if (hometop.style.display === 'none') {
+    hometop.style.display = 'block';
+    btf.snackbarShow('已显示顶部', false, 3000)
+  }
+  else {
+    hometop.style.display = 'none';
+    btf.snackbarShow('已隐藏顶部', false, 3000)
+  }
+}
+
+window.onkeydown = function (e) {
+  if (e.keyCode === 123) {
+    btf.snackbarShow('已打开控制台，请遵守GPL-V3协议', false, 3000)
+  }
 }
