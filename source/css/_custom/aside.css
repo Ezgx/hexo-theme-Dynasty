@@ -6,7 +6,7 @@
 /* 作者打招呼 */
 div#author-info__sayhi {
   text-align: left;
-  color: #3d3d3d;
+  color: var(--heo-font);
   background: var(--heo-white-op);
   font-size: 12px;
   margin-right: auto;
@@ -18,7 +18,7 @@ div#author-info__sayhi {
 #aside-content .card-info .author-info__name {
   text-align: left;
   font-weight: bold;
-  color: #3d3d3d;
+  color: var(--heo-font);
   font-size: 28px;
   line-height: 1.1;
   margin-top: 0.8rem;
@@ -31,6 +31,8 @@ div#author-info__sayhi {
   border: none;
   box-shadow: none;
   background: var(--heo-theme) !important;
+  background-size: 330% 330% !important;
+  background-position: 99% 50% !important;
   margin-top: 0px;
 }
 
@@ -83,7 +85,7 @@ div#author-info__sayhi {
 }
 
 #aside-content>div.card-widget.card-info>div>div.card-info-avatar.is-center>div.author-info__description b {
-  color: #3d3d3d;
+  color: var(--heo-font);
 }
 
 /* 作者卡片描述2 */
@@ -93,11 +95,11 @@ div#author-info__sayhi {
   text-align: justify;
   width: 100%;
   z-index: 2;
-  color: #3d3d3d;
+  color: var(--heo-font);
 }
 
 .author-info__description2 b {
-  color: #3d3d3d;
+  color: var(--heo-font);
 }
 
 .card-widget.card-info .banner-button-group {
@@ -111,7 +113,7 @@ div#author-info__sayhi {
   padding: 8px 12px;
   background: var(--heo-white-op);
   border-radius: 12px;
-  color: #3d3d3d;
+  color: var(--heo-font);
   display: flex;
   align-items: center;
   z-index: 1;
@@ -191,16 +193,6 @@ div#author-info__sayhi {
   padding-top: 30px;
 } */
 
-/* pad端隐藏部分侧边栏 */
-@media screen and (max-width: 900px) {
-  #aside-content .card-announcement {
-    display: none;
-  }
-
-  #aside-content #card-funds {
-    display: none;
-  }
-}
 
 /* 社交按钮 */
 #aside-content .card-info #card-info-btn {

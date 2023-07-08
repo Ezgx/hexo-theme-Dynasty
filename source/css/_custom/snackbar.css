@@ -15,7 +15,7 @@
   .snackbar-container p {
     font-weight: 600 !important;
     text-align: center !important;
-    color: #3d3d3d !important;
+    color: var(--heo-font) !important;
     font-size: 18px !important;
     display: flex !important;
     justify-content: center !important;

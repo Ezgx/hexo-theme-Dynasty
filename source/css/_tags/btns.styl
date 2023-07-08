@@ -1,12 +1,3 @@
-[data-theme="dark"]
-  div
-    &.btns
-      filter brightness(0.7)
-      a
-        background 0 0
-  .checkbox
-    filter brightness(0.7)
-
 div
   &.btns
     margin 0 -8px
@@ -42,10 +33,8 @@ div
       & > a
         width calc(100% / 5 - 16px)
     a
-      transition all 0.28s ease
-      -moz-transition all 0.28s ease
-      -webkit-transition all 0.28s ease
-      -o-transition all 0.28s ease
+      transition all 0.3s ease !important
+      box-shadow: 0 -4px 0 0 var(--heo-theme)
       margin 8px
       margin-top calc(1.25 * 16px + 32px) !important
       min-width 120px
@@ -54,11 +43,10 @@ div
       justify-content flex-start
       align-content center
       align-items center
+      border-radius: 7px
       flex-direction column
       padding 8px
       text-align center
-      background #f6f6f6
-      border-radius 4px
       & > i
         background #2196f3!important
         &:first-child
@@ -68,7 +56,8 @@ div
         font-weight bold
         line-height 1.3
       img
-        margin 0.4em auto
+        margin 0.4em auto !important
+        transition: all .3s !important
       &:not([href])
         cursor default
         color inherit
@@ -81,10 +70,21 @@ div
 div.btns,
 div.btns p,
 div.btns a
-  font-size 0.8125rem
+  font-size 17px
   color #555
   height 50px
   margin-bottom: 20px
+
+[data-theme="dark"]
+  div.btns,
+  div.btns p,
+  div.btns a
+    color: #fff !important
+  div.btns a
+    background var(--heo-theme) !important
+    border-radius 4px
+    background-size: 330% 330% !important
+    background-position: 99% 50% !important
 
 .btns.grid5
     height: auto

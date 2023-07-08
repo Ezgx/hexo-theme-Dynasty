@@ -10,10 +10,14 @@
       .item-count= site.posts.length
     .webinfo-item
       .item-name
-        i.fas.fa-clock.fa-shake
-        .text 建站天数
-      .item-count#runtimeshow(data-publishDate=date_xml(theme.runtimeshow.publish_date))
-        i.fa-solid.fa-spinner.fa-spin
+        i.fas.fa-eye.fa-shake
+        .text 总访问量
+      .item-count#busuanzi_value_site_pv
+    .webinfo-item
+      .item-name
+        i.fas.fa-user.fa-shake
+        .text 访问人次
+      .item-count#busuanzi_value_site_uv
     .webinfo-item
       .item-name
         i.fas.fa-pen-to-square.fa-beat

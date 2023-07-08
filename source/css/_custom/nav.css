@@ -163,6 +163,8 @@ ul.menus_item_child {
   .page .menus_item:hover > a.site-page {
     color: var(--anzhiyu-white) !important;
     background: var(--heo-theme);
+    background-size: 330% 330%;
+    background-position: 99% 50%;
     transition: 0.3s;
     box-shadow: var(--anzhiyu-shadow-main);
   }
@@ -180,9 +182,11 @@ ul.menus_item_child {
   border-radius: 8px;
   color: var(--font-color);
 }
-.page #nav a:hover {
+#nav a:hover {
   color: var(--anzhiyu-white) !important;
   background: var(--heo-theme);
+  background-size: 330% 330%;
+  background-position: 99% 50%;
   transition: 0.3s;
   box-shadow: var(--anzhiyu-shadow-main);
 }
@@ -222,6 +226,8 @@ ul.menus_item_child {
   left: 0;
   content: "回到顶部";
   background-color: var(--heo-theme);
+  background-size: 330% 330%;
+  background-position: 99% 50%;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -229,6 +235,8 @@ ul.menus_item_child {
   -o-transition: all 0.3s;
   opacity: 0;
   box-shadow: 0 0 3px var(--heo-theme);
+  background-size: 330% 330%;
+  background-position: 99% 50%;
   line-height: 45px; /*如果垂直位置不居中可以微调此值，也可以删了*/
 }
 #page-name:hover:before {
@@ -326,6 +334,8 @@ center#name-container {
 
 .back-home-button:hover {
   background: var(--heo-theme);
+  background-size: 330% 330%;
+  background-position: 99% 50%;
   color: var(--anzhiyu-white) !important;
 }
 .back-home-button {
@@ -387,6 +397,8 @@ center#name-container {
 
 .back-home-button .back-menu-list-group:hover .back-menu-list-title {
   color: var(--heo-theme);
+  background-size: 330% 330%;
+  background-position: 99% 50%;
 }
 .back-home-button .back-menu-list-groups:hover {
   border: var(--style-border-hover);

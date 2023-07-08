@@ -94,18 +94,24 @@ document.addEventListener('DOMContentLoaded', function () {
       if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         document.execCommand('copy')
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.success)
+          new Vue({
+            data: function () {
+                this.$notify({
+                    title: "复制成功",
+                    message: "转载请遵守cc协议",
+                    position: 'top-left',
+                    offset: 50,
+                    showClose: true,
+                    type: "success",
+                    duration: 4000
+                });
+            }
+          })
         } else {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success
           prevEle.style.opacity = 1
           setTimeout(() => { prevEle.style.opacity = 0 }, 700)
-        }
-      } else {
-        if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport)
-        } else {
-          ctx.previousElementSibling.innerText = GLOBAL_CONFIG.copy.noSupport
         }
       }
     }

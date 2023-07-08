@@ -1,0 +1,18 @@
+#article-container
+  #maincontent
+    #form-wrap
+      img#beforeimg(src='https://pic.imgdb.cn/item/64a3021e1ddac507ccbe96d8.png')
+      #envelope
+        form
+          .formmain
+            img.headerimg(src=url_for(theme.envelope_comment.cover))
+            .comments-main
+              h3.title3=`这里是` + config.author + `的留言板`
+              .comments
+                each i in theme.envelope_comment.message
+                  div=`${i}`
+              .bottomcontent
+                img.bottomimg(src='https://ae01.alicdn.com/kf/U0968ee80fd5c4f05a02bdda9709b041eE.png')
+              p.bottomhr=`${theme.envelope_comment.bottom}`
+      img#afterimg(src='https://pic.imgdb.cn/item/64a3021e1ddac507ccbe968a.png')
+  != page.content

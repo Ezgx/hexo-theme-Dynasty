@@ -1,0 +1,16 @@
+.flink .btns a.button {
+    height: auto !important;
+}
+.flink .btns #text {
+    font-size: 18px;
+    font-weight: 700;
+}
+.flink .btns p {
+    font-weight: 700;
+    font-size: 15px;
+    border-top: 3px dashed var(--heo-theme);
+    padding-top: 5px;
+}
+.flink .btns a {
+    width: 24% !important;
+}

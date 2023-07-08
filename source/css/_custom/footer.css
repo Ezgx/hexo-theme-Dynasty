@@ -240,7 +240,6 @@ img.footer_mini_logo:hover {
     padding: 1rem;
     color: var(--Jay-fontcolor);
     margin-top: 1rem;
-    background: var(--Jay-secondbg);
     display: flex;
     overflow: hidden;
     transition: .3s;

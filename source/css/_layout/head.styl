@@ -3,10 +3,20 @@
   width: 100%
   background-color: var(--heo-theme)
   background-position: center center
-  box-shadow: inset 0 -13vh 100vh 0 var(--cover-box-shadow-color), inset 20vw 0 100vw 0 var(--cover-box-shadow-color), inset -11vw 0 100vh 0 var(--cover-box-shadow-color), inset 0 9vh 100vh 0 var(--cover-box-shadow-color)
+  box-shadow: 
+    inset 0 -13vh 100vh 0 var(--cover-box-shadow-color), 
+    inset 20vw 0 100vw 0 var(--cover-box-shadow-color), 
+    inset -11vw 0 100vh 0 var(--cover-box-shadow-color), 
+    inset 0 9vh 100vh 0 var(--cover-box-shadow-color)
   background-size: cover
   background-repeat: no-repeat
   transition: all .5s
+  +maxwidth768
+    box-shadow: 
+      inset 0 -1vh 100vh 0 var(--cover-box-shadow-color),
+      inset 8vw 0 100vw 0 var(--cover-box-shadow-color),
+      inset -2vw 0 100vh 0 var(--cover-box-shadow-color),
+      inset 0 1vh 100vh 0 var(--cover-box-shadow-color)
 
   &:not(.not-top-img):before
     position: absolute

@@ -8,24 +8,6 @@
     box-shadow: none !important;
 }
 
-.category-lists ul li {
-    display: inline-flex;
-    background: #ff7a7a;
-    border-radius: 10px;
-    margin-right: 10px;
-    padding: 10px !important;
-    color: #fff !important;
-}
-
-.category-list-item::before{
-    display: none;
-}
-
-.category-lists .category-list a {
-    color: #fff !important;
-    font-weight: 700;
-}
-
 [data-theme="dark"]
   #post .post-copyright {
     background-color: rgb(7 8 10);
@@ -56,34 +38,34 @@
 }
 
 #page-header.nav-fixed #nav #site-name:hover, #page-header.nav-fixed #nav #toggle-menu:hover, #page-header.nav-fixed #nav a:hover {
-    color: #ffffff;
+    color: var(--heo-font);
 }
 
 #article-container code {
-    color: #fff;
+    color: var(--heo-font);
     border-radius: 5px;
     margin: 3px;
-    background: #ff7a7a;
+    background: var(--heo-theme);
 }
 
 #article-container a:hover {
-    background: #ff7a7a;
+    background: var(--heo-theme);
     margin: 3px;
     border-radius: 5px;
-    color: #fff;
+    color: var(--heo-font);
     padding: 2px 4px;
 }
 #article-container a {
-    color: var(--font-color);
+    color: var(--heo-font);
     padding: 2px 4px;
     font-weight: bolder;
     margin: 3px;
-    border-bottom: 2px solid #ff7a7a;
+    border-bottom: 2px solid var(--heo-theme)
 }
 hrl.line {
     height: 0;
     box-sizing: content-box;
-    border: 2px dashed var(--heo-theme);
+    border: 2px dashed var(--hrl-line);
     position: relative;
     width: 100%;
     display: block;
@@ -94,19 +76,6 @@ hrl.line {
 [data-theme="dark"]
 .recent-post-item {
     border: 1px solid #3d3d3f
-}
-
-btn.hideasidebutton {
-    position: fixed;
-    top: 10vh;
-    background: #ff7a7a;
-    padding: 10px;
-    border-radius: 10px;
-}
-btn.hideasidebutton i {
-    line-height: 2;
-    color: #fff;
-    font-size: 20px;
 }
 
 /* 滚动条 */
@@ -121,7 +90,7 @@ btn.hideasidebutton i {
   }
   
   ::-webkit-scrollbar-thumb {
-    background-color: #ff7a7a;
+    background: var(--cover-box-shadow-color);
     background-image: -webkit-linear-gradient(
       45deg,
       rgba(255, 255, 255, 0.4) 25%,
@@ -141,7 +110,7 @@ btn.hideasidebutton i {
   
   ::-moz-selection {
     color: #fff;
-    background-color: #ff7a7a;
+    background-color: var(--heo-theme);
   }
 
 main#content-inner {
@@ -152,3 +121,25 @@ main#content-inner {
   padding-top: 50px;
 }
 
+#recent-posts>.recent-post-item>.recent-post-info>.article-title {
+  color: var(--heo-font) !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+#recent-posts>.recent-post-item>.recent-post-info>.article-meta-wrap {
+  color: var(--heo-font) !important;
+}
+
+[data-theme="dark"] #recent-posts>.recent-post-item {
+    background: var(--heo-theme) right !important;
+    background-size: 330% 330% !important;
+}
+
+[data-theme="dark"] #footer-banner {
+    background: var(--heo-theme) !important;
+}
+
+#footer-banner {
+  padding-bottom: 100px !important;
+}
