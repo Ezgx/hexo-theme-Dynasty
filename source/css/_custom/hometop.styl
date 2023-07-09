@@ -18,11 +18,9 @@
 
 .fposts .ftags
     width: 100%
-    +maxwidth768
-        width: 100%
 
 .hometop_item.bar
-    border-radius: 15px
+    border-radius: 12px !important
     display: inline-flex !important
     width: 49%
     margin: 1%
@@ -92,7 +90,7 @@
     object-fit: cover;
 
 
-.recent-top-post-group 
+.recent-top-post-group
     width: 59%
     margin-right: 1%
     display: inline-block
@@ -126,6 +124,22 @@
     height: 200px
     display: flex
 
+@media screen and (max-width: 768px)
+    .hometop .group2
+        flex-flow: column
+        height 400px
+    .hometop .group2 .hometop_item
+        width: 100% !important
+        height 50%
+    .hometop .group1 .hometop-creativity
+        display: none !important
+    .hometop .group1 .recent-top-post-group
+        width: 100%
+    .hometop .fposts .ftags .hometop_item.bar
+        width: 100%
+    .hometop .fposts .ftags #tag-bar
+        margin-bottom: 0
+
 .hometop .descr
     height: 100%
     width: 69%
@@ -140,6 +154,9 @@
     font-weight: 700
     position relative
     top -20px
+
+    +maxwidth768()
+        font-size: 20px !important
 
 .hometop .descr .subtitle
     font-size: 7px
@@ -164,17 +181,12 @@
 [data-theme="dark"] 
     .hometop .siteinfo
         background: var(--heo-theme)
-        background-size: 330% 330%
-        background-position: 99% 50%
-        color: #fff
+        color: var(--heo-font)
         border: 1px solid #000
     .hometop .descr
         background: #18171D
     .recent-post-top .recent-post-item
         background: #18171D
-    .hometop
-        background-size: 375% 375%
-        background-position: 99% 50%
 
 [data-theme="light"]
     .hometop
@@ -239,6 +251,4 @@ div#recent-post-top::-webkit-scrollbar
 #archive
     border-radius: 12px
     margin-top: 40px
-    background-position: 99% 50%
     background: var(--heo-theme) right
-    background-size: 330% 330%

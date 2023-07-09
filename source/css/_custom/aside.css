@@ -31,8 +31,6 @@ div#author-info__sayhi {
   border: none;
   box-shadow: none;
   background: var(--heo-theme) !important;
-  background-size: 330% 330% !important;
-  background-position: 99% 50% !important;
   margin-top: 0px;
 }
 
