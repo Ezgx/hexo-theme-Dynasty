@@ -60,7 +60,9 @@
           img(src=url_for(hometop.descr.img))
           .subtitle subtitle
           span=hometop.descr.subtitle
-  section.main-hero-waves-area.waves-area
+  script(src="/js/fish.js")
+  #jsi-flying-fish-container
+  // section.main-hero-waves-area.waves-area
     svg.waves-svg(xmlns='http://www.w3.org/2000/svg', xlink='http://www.w3.org/1999/xlink', viewBox='0 24 150 28', preserveAspectRatio='none', shape-rendering='auto')
       defs
         path#gentle-wave(d='M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z')
