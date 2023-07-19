@@ -11,4 +11,4 @@ Docs: 📖 [dynasty Docs](https://dynasty.uu.sssu.us)
 
 Based on [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly).
 
-![](https://pic.imgdb.cn/item/649ad9d51ddac507cc40f140.png)
+![](theme.png)
