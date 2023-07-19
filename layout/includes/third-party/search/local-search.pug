@@ -1,7 +1,6 @@
 #local-search
   .search-dialog
     nav.search-nav
-      span.search-dialog-title= _p('search.title')
       span#loading-status
       button.search-close-button
         i.fas.fa-times
@@ -14,7 +13,8 @@
       #local-search-input
         .local-search-box
           input(placeholder=_p("search.local_search.input_placeholder") type="text").local-search-box--input
-      hrl.line
+      hrl.line(style='margin-top:15px; border: 2px dashed var(--search-border-color) !important;')
       #local-search-results
+      hrl.line(style='border: 2px dashed var(--search-border-color) !important;')
 
   #search-mask

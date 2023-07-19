@@ -1,6 +1,7 @@
 #page-header.post-bg:before {
     background-color: rgba(0,0,0,0.0);
     backdrop-filter: saturate(180%) blur(15px);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
 }
 
 #page {
@@ -33,8 +34,8 @@
 }
 
 #search-mask {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
 }
 
 #page-header.nav-fixed #nav #site-name:hover, #page-header.nav-fixed #nav #toggle-menu:hover, #page-header.nav-fixed #nav a:hover {
@@ -149,4 +150,21 @@ main#content-inner {
 
 #footer-banner {
   padding-bottom: 100px !important;
+}
+
+.maininner#post {
+  box-shadow: none !important;
+  background: #0000 !important;
+}
+#recent-posts>.recent-post-item {
+  box-shadow: none !important;
+}
+.maininner#post {
+  padding-top: 0 !important;
+  padding-left: 0;
+}
+nav.show .title {
+  font-weight: bold;
+  text-shadow: 0 0 black;
+  letter-spacing: 1.7px;
 }

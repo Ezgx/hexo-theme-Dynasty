@@ -27,3 +27,9 @@ function postSpan(args) {
 
 hexo.extend.tag.register('p', postP);
 hexo.extend.tag.register('span', postSpan);
+
+function sj(tab) {
+  tab = tab.join(' ').split(',');
+  return `<div class='stab'></div>`;
+}
+hexo.extend.tag.register('tab', sj);

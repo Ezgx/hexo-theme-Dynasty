@@ -103,26 +103,6 @@ mixin postUI(posts)
                     span.artalk-count(data-page-key=url_for(link))
                       i.fa-solid.fa-spinner.fa-spin
 
-        //- Display the article introduction on homepage
-        case theme.index_post_content.method
-          when false
-            - break
-          when 1
-            .content!= article.description
-          when 2
-            if article.description
-              .content!= article.description
-            else
-              - const content = strip_html(article.content)
-              - let expert = content.substring(0, theme.index_post_content.length) 
-              - content.length > theme.index_post_content.length ? expert += ' ...' : ''
-              .content!= expert
-          default
-            - const content = strip_html(article.content)
-            - let expert = content.substring(0, theme.index_post_content.length) 
-            - content.length > theme.index_post_content.length ? expert += ' ...' : ''
-            .content!= expert
-
     if theme.ad && theme.ad.index
       if (index + 1) % 3 == 0
         .recent-post-item.ads-wrap!=theme.ad.index

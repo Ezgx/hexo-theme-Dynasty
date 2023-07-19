@@ -91,7 +91,7 @@ img.footer_mini_logo:hover {
 }
 
 #footer {
-    background: linear-gradient(180deg, var(--Jay-background) 0, var(--Jay-card-bg) 25%);
+    background: #eff2fa;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;

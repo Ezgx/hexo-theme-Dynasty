@@ -25,7 +25,3 @@
 #sidebar #sidebar-menus .menus_items a.site-page, #sidebar .menus_item ul {
     padding-left: 0
 }
-
-#sidebar #sidebar-menus.open {
-    border-radius: 12px 0 0 0;
-}

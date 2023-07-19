@@ -141,6 +141,11 @@ ul.menus_item_child {
   height: 60px;
 }
 
+#nav {
+  background: var(--nav-bg) !important;
+  height: 60px !important;
+}
+
 #nav .menus_items .menus_item:hover .menus_item_child {
   display: block;
   transform: translateX(-50%);
@@ -174,7 +179,9 @@ ul.menus_item_child {
 }
 #nav {
   padding: 15px !important;
+  position: fixed;
   backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 #nav a {

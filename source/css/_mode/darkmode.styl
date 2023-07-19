@@ -1,6 +1,6 @@
 if hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark'
   [data-theme='dark']
-    --global-bg: darken(#121212, 2)
+    --global-bg: #181C27
     --font-color: alpha(#FFFFFF, .7)
     --hr-border: alpha(#FFFFFF, .4)
     --hr-before-color: alpha(#FFFFFF, .7)
@@ -125,3 +125,6 @@ if hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark'
     #card-toc
       +maxWidth900()
         background: lighten(#121212, 5)
+
+#body-wrap
+  background: var(--global-bg)

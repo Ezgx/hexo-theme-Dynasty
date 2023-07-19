@@ -33,7 +33,9 @@
 
   [data-theme=light] {
     --heo-inline-code: #3d3d3d;
+    --search-border-color: #181c27;
     --heo-theme: #71e5ff;
+    --nav-bg: #ffffffb0;
     --hrl-line: #71e5ff;
     --bg: #F7F9FE;
     --heo-theme-op: #4259ef23;
@@ -67,9 +69,10 @@
   
   [data-theme=dark] {
     --heo-inline-code: #fff;
-    /* --heo-theme: linear-gradient(293deg, rgb(218, 184, 99), rgb(209, 176, 92), rgb(189, 156, 75), #b19347); */
+    --search-border-color: #e3e8f7;
     --heo-theme: linear-gradient(101deg, #7f2638, #973644, #9b565f, #b79494);
     --hrl-line: #994A55;
+    --nav-bg: #181C27b0;
     --hometop-bg: var(--heo-theme);
     --bg: #18171d;
     --heo-theme-op: #0084FF23;

@@ -6,7 +6,8 @@ if hexo-config('preloader')
     position: fixed;
     background: var(--loading-bg);
     backdrop-filter: saturate(180%) blur(20px)
-    z-index: 1001;
+    -webkit-backdrop-filter: blur(20px) saturate(180%)
+    z-index: 99999;
     opacity: 1;
     transition: .3s;
 

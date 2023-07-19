@@ -6,12 +6,15 @@
       width: 100%
 
       input
-        padding: 5px 14px
+        padding: 15px
         width: 100%
         outline: none
-        border: 2px solid var(--heo-theme)
-        border-radius: 40px
-        background: var(--search-bg)
+        border: 1px solid var(--search-border-color)
+        border-radius: 100vh
+        background: transparent
+        font-size: 27px
+        text-align: center
+        font-weight: 600 
         color: var(--search-input-color)
         -webkit-appearance: none
 
@@ -20,39 +23,20 @@
 
     .local-search__hit-item
       position: relative
-      padding-left: 24px
+      padding: 15px
       line-height: 1.7
-
-      &:hover
-        &:before
-          border-color: var(--pseudo-hover)
-
-      &:before
-        $w = .5em
-        position: absolute
-        top: .45em
-        left: 0
-        width: w = $w
-        height: h = w
-        border: 3px solid var(--heo-theme)
-        border-radius: w
-        background: transparent
-        content: ''
-        line-height: h
-        transition: all .2s ease-in-out
 
       a
         display: block
-        color: var(--search-result-title)
-        font-weight: 600
+        font-weight: 800
         cursor: pointer
-
-        &:hover
-          color: var(--heo-theme)
+        font-size: 20px
+        color: var(--search-border-color)
 
       .search-result
         margin: 0 8px 8px 0
         word-break: break-all
+        font-size: 17px !important
 
       .search-keyword
         color: $search-keyword-highlight
@@ -65,3 +49,17 @@
       +maxWidth768()
         padding-bottom: 40px
         max-height: 75vh !important
+
+.local-search__hit-item
+    height: 90px
+    text-align: center
+    overflow: hidden
+    transition: all .5s
+    border-bottom: 1px dashed var(--search-border-color)
+
+    &:hover
+      background: var(--search-border-color)
+      color: var(--global-bg)
+
+      a
+        color: var(--global-bg) !important
