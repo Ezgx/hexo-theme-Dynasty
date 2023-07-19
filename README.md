@@ -12,3 +12,5 @@ Docs: 📖 [dynasty Docs](https://dynasty.uu.sssu.us)
 Based on [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly).
 
 ![](theme.png)
+
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=boea2LYMrf08sg8v7S8AtujkoL0iDyP3&jump_from=webapi&authKey=dW6WNBsGWkdTHokpRIoa9gUO/ja2HcOwNiXvTAPk7yIrN4Jxg0vifDSgcwqJWQPF"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Dimspace" title="Dimspace"></a>
