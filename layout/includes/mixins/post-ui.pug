@@ -1,6 +1,6 @@
 mixin postUI(posts)
   each article , index in page.posts.data
-    .recent-post-item
+    .recent-post-item(onclick=`pjax.loadUrl('${url_for(article.path)}')`)   
       -
         let link = article.link || article.path
         let title = article.title || _p('no_title')
@@ -9,10 +9,10 @@ mixin postUI(posts)
       -
       if post_cover && theme.cover.index_enable
         .post_cover.left
-          a(href=url_for(link) title=title)
+          a(title=title)
             img.post_bg(src=url_for(post_cover) onerror=`this.onerror=null;this.src='`+ url_for(theme.error_img.post_page) + `'` alt=title)
-      .recent-post-info(class=no_cover href=url_for(link) title=title)
-        a.article-title(href=url_for(link) title=title)= title
+      .recent-post-info(class=no_cover title=title)
+        a.article-title(title=title)= title
         .article-meta-wrap
           if (is_home() && (article.top || article.sticky > 0))
             span.article-meta

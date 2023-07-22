@@ -20,11 +20,6 @@
     --style-border-hover: 1px solid var(--heo-theme);
   }
   
-  ::selection {
-    background: var(--heo-fontcolor);
-    color: var(--heo-background);
-  }
-  
   
 
 [data-theme="dark"] .loading-bg {
@@ -70,6 +65,8 @@
   [data-theme=dark] {
     --heo-inline-code: #fff;
     --search-border-color: #e3e8f7;
+    --select-bg: #425aef;
+    --select: #fff;
     --heo-theme: linear-gradient(101deg, #7f2638, #973644, #9b565f, #b79494);
     --hrl-line: #994A55;
     --nav-bg: #181C27b0;

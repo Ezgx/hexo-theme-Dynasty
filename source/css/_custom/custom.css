@@ -168,3 +168,7 @@ nav.show .title {
   text-shadow: 0 0 black;
   letter-spacing: 1.7px;
 }
+.homemain {
+  position: relative;
+  top: -80px;
+}

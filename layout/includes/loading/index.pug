@@ -30,8 +30,5 @@ if theme.preloader.enable
       }
     }
     window.addEventListener('load',()=> { preloader.endLoading() })
-
-    if (!{theme.pjax && theme.pjax.enable}) {
-      document.addEventListener('pjax:send', () => { preloader.initLoading() })
-      document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-    }
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })

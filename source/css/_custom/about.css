@@ -1136,11 +1136,6 @@
   z-index: 3;
 }
 
-::selection {
-  color: #fff;
-  background: #2128bd;
-}
-
 .author-content-item.skills {
   display: flex;
   justify-content: center;

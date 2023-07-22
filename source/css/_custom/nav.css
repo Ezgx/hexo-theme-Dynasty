@@ -178,8 +178,9 @@ ul.menus_item_child {
   transform: translateY(58px) !important;
 }
 #nav {
-  padding: 15px !important;
+  justify-content: center;
   position: fixed;
+  padding: 0 !important;
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
@@ -474,7 +475,15 @@ center#name-container {
   display: none;
 }
 #page-header.nav-visible #nav {
-    padding: 15px;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+}
+div#navbar {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  padding: 0 .7rem;
+  align-items: center;
+  justify-content: center;
 }

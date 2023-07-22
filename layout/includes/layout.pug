@@ -33,15 +33,26 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
         if is_home()
           include ./hometop.pug
 
-        main#content-inner.layout(class=hideAside)
-          if body
-            div!= body
-          else
-            block content
-            if theme.aside.enable && page.aside !== false
-              include widget/index.pug
-              if (is_page())
-                block content
+        if is_home()
+          main#content-inner.layout.homemain(class=hideAside)
+            if body
+              div!= body
+            else
+              block content
+              if theme.aside.enable && page.aside !== false
+                include widget/index.pug
+                if (is_page())
+                  block content
+        else
+          main#content-inner.layout(class=hideAside)
+            if body
+              div!= body
+            else
+              block content
+              if theme.aside.enable && page.aside !== false
+                include widget/index.pug
+                if (is_page())
+                  block content
 
         - var footerBg = theme.footer_bg
         if (footerBg)
