@@ -189,6 +189,7 @@ ul.menus_item_child {
   border-radius: 8px;
   color: var(--font-color);
 }
+
 #nav a:hover {
   color: var(--anzhiyu-white) !important;
   background: var(--heo-theme);
