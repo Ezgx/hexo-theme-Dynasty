@@ -2,30 +2,30 @@
 # see https://butterfly.js.org/posts/4aa8abbe/#導航菜單
 # --------------------------------------
 
-menu:
-  本站||: # fas fa-book
-    首页: / || fas fa-house-user
-    归档: /archives/ || fas fa-box-archive
-    标签: /tags/ || fas fa-tags
-    分类: /categories/ || fas fa-folder-open
-  链环||: # fas fa-link
-    友链: /link/ || fas fa-link
-    RSS: /atom.xml || fas fa-rss
-    留言: /comments/ || fas fa-comments
-  找我||: # fab fa-github
-    博主QQ: /authorqq/ || fab fa-qq
-    博主微信: /authorwechat/ || fab fa-weixin
-    QQ群: /qqgroup/ || fas fa-user-group
-    github: https://github.com/ezgx || fab fa-github
-  # 关于
-  我的||: # fas fa-address-card
-    协议: /cc/ || fab fa-creative-commons
-    主题: https://dim.sssu.us/ || fas fa-wand-magic-sparkles
-    关于: /about/ || fas fa-heart
-    主页: https://sssu.us || fas fa-house-user
-
-agreement:
-  enable: true
+nav:
+  menu:
+    本站||: # fas fa-book
+      首页: / || fas fa-house-user
+      归档: /archives/ || fas fa-box-archive
+      标签: /tags/ || fas fa-tags
+      分类: /categories/ || fas fa-folder-open
+    链环||: # fas fa-link
+      协议: /cc/ || fab fa-creative-commons
+      友链: /link/ || fas fa-link
+      RSS: /atom.xml || fas fa-rss
+      留言: /comments/ || fas fa-comments
+    找我||: # fab fa-github
+      博主QQ: /authorqq/ || fab fa-qq
+      博主微信: /authorwechat/ || fab fa-weixin
+      QQ群: /qqgroup/ || fas fa-user-group
+      github: https://github.com/ezgx || fab fa-github
+      主页: https://sssu.us || fas fa-house-user
+    # 关于
+    我的||: # fas fa-address-card
+      追番: /bangumis/ || fab fa-bilibili
+      关于: /about/ || fas fa-heart
+      主题: https://dys.sssu.us/ || fas fa-wand-magic-sparkles
+  title: AEG
 
 hometop:
   featured_posts:
@@ -183,6 +183,13 @@ local_search:
   preload: false
   CDN:
 
+# busuanzi count for PV / UV in site
+# 訪問人數
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
 # Math (數學)
 # --------------------------------------
 # About the per_page
@@ -268,15 +275,6 @@ wordcount:
   min2read: true
   total_wordcount: true
 
-# Display the article introduction on homepage
-# 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
-index_post_content:
-  method: 3
-  length: 500 # if you set method to 2 or 3, the length need to config
-
 # anchor
 anchor:
   button:
@@ -311,14 +309,6 @@ reward:
       link: https://uu.sssu.us/img/wechatpay.jpg
       text: 微信
 
-# Post edit
-# Easily browse and edit blog source code online.
-post_edit:
-  enable: false
-  # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
-
 # Related Articles
 related_post:
   enable: true
@@ -327,13 +317,6 @@ related_post:
 
 # figcaption (圖片描述文字)
 photofigcaption: false
-
-# post_pagination (分頁)
-# value: 1 || 2 || false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
-post_pagination: 1
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -620,39 +603,6 @@ enter_transitions: true
 # Background effects (背景特效)
 # --------------------------------------
 
-# canvas_ribbon (靜止彩帶背景)
-# See: https://github.com/hustcc/ribbon.js
-canvas_ribbon:
-  enable: false
-  size: 150
-  alpha: 0.6
-  zIndex: -1
-  click_to_change: false
-  mobile: false
-
-# Fluttering Ribbon (動態彩帶)
-canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
-
-# canvas_nest
-# https://github.com/hustcc/canvas-nest.js
-canvas_nest:
-  enable: false
-  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
-  zIndex: -1 # z-index property of the background, default: -1.
-  count: 99 # the number of lines, default: 99.
-  mobile: false
-
-# Typewriter Effect (打字效果)
-# https://github.com/disjukr/activate-power-mode
-activate_power_mode:
-  enable: false
-  colorful: true # open particle animation (冒光特效)
-  shake: true #  open shake (抖動特效)
-  mobile: false
-
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
   enable: false
@@ -677,7 +627,7 @@ ClickShowText:
 
 # Default display mode (網站默認的顯示模式)
 # light (default) / dark
-display_mode: dark
+display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
@@ -824,9 +774,7 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: true
   exclude:
-    # - xxxx
     # - xxxx
 
 # Inject the css and script (aplayer/meting)
