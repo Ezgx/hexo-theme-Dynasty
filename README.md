@@ -1,4 +1,4 @@
-# hexo-theme-dimension
+# hexo-theme-dynasty
 
 ![](https://img.shields.io/github/package-json/v/ezgx/hexo-theme-dynasty/main?color=ff7a7a&label=main)
 ![](https://img.shields.io/npm/v/hexo-theme-dynasty?color=32C9EB)
