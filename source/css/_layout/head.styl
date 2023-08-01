@@ -1,5 +1,7 @@
 #page-header
   position: relative
+  display: flex
+  justify-content: center
   width: 100%
   background-color: var(--heo-theme)
   background-position: center center
@@ -103,7 +105,7 @@
 
   // post
   &.post-bg
-    height: 500px
+    height: 550px
 
     &:before
       backdrop-filter: saturate(180%) blur(15px)
@@ -111,8 +113,8 @@
 
   #post-info
     position: absolute
-    bottom: 30%
-    padding: 0 8%
+    bottom: 35%
+    max-width: 1200px
     width: 100%
     text-align: left
     text-shadow: 2px 2px #000

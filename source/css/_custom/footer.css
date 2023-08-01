@@ -90,8 +90,14 @@ img.footer_mini_logo:hover {
     transform: scale(1.03)
 }
 
+#footer-banner {
+    max-width: 1200px;
+    margin: 1rem auto;
+    width: 100%;
+}
+
 #footer {
-    background: #eff2fa;
+    background: var(--footer-bg);
     margin-top: 1rem;
     display: flex;
     flex-direction: column;

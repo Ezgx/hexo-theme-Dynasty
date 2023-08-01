@@ -144,6 +144,7 @@ ul.menus_item_child {
 #nav {
   background: var(--nav-bg) !important;
   height: 60px !important;
+  border-bottom: 1px solid var(--border);
 }
 
 #nav .menus_items .menus_item:hover .menus_item_child {
