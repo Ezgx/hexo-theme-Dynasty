@@ -10,9 +10,26 @@
     overflow: hidden
     height: 18em
 
+    if hexo-config('post_double_row') == false
+      &::after
+        position: relative
+        height: 100%
+        width: 4px
+        background: #909DF3
+        content: ''
+        bottom: 0
+        border-radius: 100vh
+        left: 0
+        right: -99%
+        animation: glow 10s linear infinite
+
+        +maxWidth768()
+          height: 4px
+          width: 100%
+
     +maxWidth768()
       flex-direction: column
-      height: auto
+      height: 350px !important
 
     &:hover
       img.post_bg
@@ -24,7 +41,7 @@
 
     .post_cover
       overflow: hidden
-      width: 44%
+      width: 50%
       height: 100%
 
       +maxWidth768()

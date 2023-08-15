@@ -54,10 +54,10 @@ function toggleTheme() {
 
 function showconsolebtn() {
   var consolebtn = document.getElementById('console-pannel');
-  if (consolebtn.style.right === '7px') {
-    consolebtn.style.right = '-115px';
+  if (consolebtn.style.top === '50px') {
+    consolebtn.style.top = '-110px';
   } else {
-    consolebtn.style.right = '7px'
+    consolebtn.style.top = '50px'
   }
 }
 

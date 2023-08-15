@@ -1,10 +1,23 @@
 - var hometop = theme.hometop
 - var fposts = theme.hometop.featured_posts
+- const { effect,loop,source,sub,startDelay,typeSpeed,backSpeed } = theme.hometop
+- let subContent = subtitle || new Array()
 
 .hometop
   .hometopin
-    .blog-title
-      span.title=config.title
+    if hometop.style === 1
+      .blog-title
+        .in
+          span.title=hometop.title.title
+          .subtitle
+            .swiper-container.sublist
+              .swiper-wrapper
+                each item in hometop.subtitle
+                  .swiper-slide=`${item}`
+          script(src="/js/sub.js") 
+    else
+      .blog-title
+        span.title=hometop.title.title
     .fposts
       .ftags
         #tag-bar.hometop_item.bar
@@ -27,39 +40,44 @@
                                         img.post_bg.entered.loaded(src=url_for(i.cover) onerror="this.onerror=null,this.src='/img/404.png'")
                                 .recent-post-info(href=url_for(i.link))
                                     a.article-title(href=url_for(i.link), title=i.title)= i.title
-        .hometop-creativity.hometop_item
-          .inbar
-            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
-            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
-            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
-            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
-            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
-            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
-            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
-            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
-            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
-            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
-            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
-            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
-            img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
-            img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
-            img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
-            img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
-            img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
-      .group2
-        .siteinfo.hometop_item
-          include widget/card_webinfo.pug
-        .descr.hometop_item
-          img(src=url_for(hometop.descr.img))
-          .subtitle subtitle
-          span=hometop.descr.subtitle
+        if hometop.style === 1
+          .hometop-webinfo.hometop_item
+            include widget/card_webinfo.pug
+        else
+          .hometop-creativity.hometop_item
+            .inbar
+              img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+              img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+              img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+              img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+              img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+              img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+              img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+              img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+              img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+              img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+              img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+              img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+              img(src="https://bu.dusays.com/2023/04/21/6442840244ea8.webp", style="background:#e9572b", alt="html")
+              img(src="https://bu.dusays.com/2023/04/21/644284024536b.webp", style="background:#2c51db", alt="css3")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245873.webp", style="background:#f7cb4f", alt="js")
+              img(src="https://bu.dusays.com/2023/04/21/6442840245495.webp", style="background:#df5b40", alt="git")
+              img(src="https://bu.dusays.com/2023/04/28/644bdead5d78f.webp", style="background:#57b6e6", alt="docker")
+              img(src="https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg", style="background:#333", alt="node")
+      if hometop.style === 2
+        .group2
+          .siteinfo.hometop_item
+            include widget/card_webinfo.pug
+          .descr.hometop_item
+            img(src=url_for(hometop.descr.img))
+            .subtitle subtitle
+            span=hometop.descr.subtitle
   script(src="/js/fish.js")
   #jsi-flying-fish-container
   // section.main-hero-waves-area.waves-area
@@ -71,3 +89,20 @@
         use(href='#gentle-wave', x='48', y='3')
         use(href='#gentle-wave', x='48', y='5')
         use(href='#gentle-wave', x='48', y='7')
+
+- subContent = subContent.length ? subContent : new Array(config.subtitle)
+//- script.
+  function subtitleType () {
+    if (!{effect}) { 
+      window.typed = new Typed(".subtitle", {
+        strings: !{JSON.stringify(subContent)},
+        startDelay: !{startDelay},
+        typeSpeed: !{typeSpeed},
+        loop: !{loop},
+        backSpeed: !{backSpeed}
+      })
+    } else {
+      document.getElementById("subtitle").innerHTML = '!{subContent[0]}'
+    }
+  }
+  subtitleType()

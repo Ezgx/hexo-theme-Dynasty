@@ -89,28 +89,24 @@
     width: 100%;
     object-fit: cover;
 
-
 .recent-top-post-group
     width: 59%
     margin-right: 1%
     display: inline-block
 
-.hometop-creativity img
-    width: 164px !important
-    height: 100%
-    display: inline-block
-    width: 40%
-    object-fit: contain
-    padding: 20px
-    margin-right: 15px
-    border-radius: 20px
-
-.hometop-creativity
-    display: inline-flex
+.hometop-webinfo
+    display: block
+    padding: 15px
+    background: var(--heo-background)
     border-radius: 10px
-    overflow: hidden
-    overflow-x: scroll
+    overflow-x: hidden
+    overflow-y: scroll
     width: 38%
+    [data-theme="dark"]
+        .hometop-webinfo
+            background: var(--heo-theme)
+
+
     height: 100%
     margin-right: 2%
     &::-webkit-scrollbar
@@ -131,7 +127,7 @@
     .hometop .group2 .hometop_item
         width: 100% !important
         height 50%
-    .hometop .group1 .hometop-creativity
+    .hometop .group1 .hometop-webinfo
         display: none !important
     .hometop .group1 .recent-top-post-group
         width: 100%
@@ -158,11 +154,6 @@
     +maxwidth768()
         font-size: 20px !important
 
-.hometop .descr .subtitle
-    font-size: 7px
-    top -7px
-    position relative
-
 .hometop .descr img
     height: 70%
     border-radius: 15px
@@ -182,25 +173,33 @@
     .hometop .siteinfo
         background: var(--heo-theme)
         color: var(--heo-font)
-        border: 1px solid #000
-
-[data-theme="light"]
-    .hometop
-        background-image: 
-          radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%),
-          radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%)
-        background-size: 48px 48px
+        border: 1px solid #3d3d3d
 
 .hometop
   content: ''
   position: relative
+  background-attachment: fixed
   top: -90px
   padding-top 70px
-  background: var(--hometop-bg)
   width: 100%
   height: 100%
   background-attachment: fixed
-  background-position: 0px 0px, 24px 24px
+  if hexo-config('hometop.background.type') == img
+    background: url(hexo-config('hometop.background.bg')) center center
+    background-size: cover !important
+  else if hexo-config('hometop.background.type') == colors
+    background: hexo-config('hometop.background.bg') && unquote(hexo-config('hometop.background.bg'))
+  else if hexo-config('hometop.background.type') == default
+    background-color: var(--hometop-bg)
+
+[data-theme="light"]
+    .hometop
+        if hexo-config('hometop.background.type') == default
+            background-position: 0px 0px, 24px 24px
+            background-image: 
+              radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%),
+              radial-gradient(var(--hometop-bg-dot-color) 22.4%, transparent 22.4%)
+            background-size: 48px 48px
 
 .hometop-creativity .inbar
     animation: rowup 10s linear infinite
@@ -208,6 +207,19 @@
 
 .blog-title
     width: 100%
+    color: hexo-config('hometop.title.color') && unquote(hexo-config('hometop.title.color'))
+    align-items: center
+    if hexo-config('hometop.style') == 1
+        height: 200px
+        text-align: center
+    .in
+        top: 16%
+        position: relative
+
+.descr img
+    border-radius: 20px
+    width: 100%
+    height: 66%
 
 .blog-title span.title
     font-size: 35px
@@ -216,8 +228,28 @@
     font-weight: 800
     margin-bottom: 6px
     padding: 0 17px
-    border-bottom: 1px solid #000
-    color: #000
+    border-bottom: 1px solid hexo-config('hometop.title.color') && unquote(hexo-config('hometop.title.color'))
+
+.blog-title .subtitle
+    font-size: 25px
+    font-weight: 700 
+    height: 1.5em
+    overflow: hidden
+    .sublist
+        height: 100%
+
+.inbar img 
+    width: 164px
+    margin-right: 10px
+    padding: 20px
+    border-radius: 15px
+    height: 164px
+
+.hometop-creativity.hometop_item
+    overflow: hidden
+    display: flex
+    border-radius: 15px
+    width: 38%
 
 .webinfo-item
     display: flex
@@ -234,7 +266,7 @@
 div#recent-post-top::-webkit-scrollbar
     display: none
 
-.skills-style-group.hometop-creativity
+.skills-style-group.hometop-webinfo
     width: 40%
     display: inline-block
 
@@ -244,7 +276,7 @@ div#recent-post-top::-webkit-scrollbar
 .hometop .siteinfo::-webkit-scrollbar
     display: none
 
-#jsi-flying-fish-container{
-  width: 100%;
-  margin-bottom: -13px;
-}
+#jsi-flying-fish-container
+  width: 100%
+  margin-bottom: -13px
+  height 174px

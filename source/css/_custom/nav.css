@@ -1,8 +1,9 @@
 #nav a:hover {
-  background: var(--heo-theme);
   transition: 0.3s;
 }
-
+#nav .menus_item:hover a {
+  color: #000 !important;
+}
 #nav-totop:hover .totopbtn i {
   opacity: 1;
 }
@@ -59,10 +60,6 @@
 .nav-button {
   cursor: pointer;
 }
-div#menus {
-  display: flex;
-  align-items: center;
-}
 #page-header #nav .nav-button a {
   height: 35px;
   display: flex;
@@ -82,15 +79,17 @@ div#menus {
   padding: 2px 16px;
 }
 #nav .menus_items .menus_item .menus_item_child li:hover a {
-  color: white !important;
+  color: #000 !important;
 }
 
 #nav .menus_items .menus_item .menus_item_child li {
   margin: 6px;
   border-radius: 5px;
   transition: all 0.3s;
-  display: inline-block;
-  margin: 0 3px;
+  display: flex;
+  border-radius: 100vh;
+  align-items: center;
+  margin: 7px 3px;
 }
 #nav .menus_items .menus_item .menus_item_child:before {
   top: -19px;
@@ -130,10 +129,8 @@ ul.menus_item_child {
 
 /* 一级菜单居中 */
 #nav .menus_items {
-  position: absolute;
+  position: relative;
   width: fit-content;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -142,14 +139,30 @@ ul.menus_item_child {
 }
 
 #nav {
-  background: var(--nav-bg) !important;
+  background: #0000 !important;
   height: 60px !important;
-  border-bottom: 1px solid var(--border);
+  width: fit-content;
+}
+
+#nav #buttons {
+  height: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 40px;
+  border-radius: 100vh;
+  background: #000;
+  margin-left: 10px;
 }
 
 #nav .menus_items .menus_item:hover .menus_item_child {
-  display: block;
+  display: flex;
+  flex-direction: column;
   transform: translateX(-50%);
+  top: 30px;
+  align-items: center;
+  background: #000;
+  border-radius: 20px;
   right: auto;
   left: auto !important;
   padding: 6px 4px;
@@ -157,18 +170,21 @@ ul.menus_item_child {
   line-height: 35px;
 }
 #nav .menus_items .menus_item:hover {
-  padding: 0 5px 27px 5px !important;
-  margin-bottom: -14.5px !important;
+  color: #000;
+  background-color: #fff;
 }
-
+#nav .menus_items .menus_item {
+  border-radius: 100vh;
+  justify-content: center;
+  padding: 0 10px !important;
+}
 #nav .menus_items .menus_item .menus_item_child {
   top: 44px;
 }
 
 @media screen and (min-width: 768px) {
   .page .menus_item:hover > a.site-page {
-    color: var(--anzhiyu-white) !important;
-    background: var(--heo-theme);
+    color: #000 !important;
     background-position: 99% 50%;
     transition: 0.3s;
     box-shadow: var(--anzhiyu-shadow-main);
@@ -182,18 +198,16 @@ ul.menus_item_child {
   justify-content: center;
   position: fixed;
   padding: 0 !important;
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: none !important;
 }
 
 #nav a {
   border-radius: 8px;
-  color: var(--font-color);
+  color: #fff;
 }
 
 #nav a:hover {
-  color: var(--anzhiyu-white) !important;
-  background: var(--heo-theme);
+  color: #fff !important;
   transition: 0.3s;
   box-shadow: var(--anzhiyu-shadow-main);
 }
@@ -232,7 +246,7 @@ ul.menus_item_child {
   top: 0;
   left: 0;
   content: "回到顶部";
-  background-color: var(--heo-theme);
+  background-color: var(--heo-theme) !important;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -245,13 +259,8 @@ ul.menus_item_child {
 #page-name:hover:before {
   opacity: 1;
 }
-.search-button-text {
-  display: flex;
-  padding: 0 7px 0 5px;
-}
 .search-button-text i {
   line-height: 2;
-  margin-right: 3px;
 }
 #name-container {
   transition: all 0.3s;
@@ -470,7 +479,6 @@ center#name-container {
   padding-left: 0;
 }
 #page-header #nav .nav-button {
-  margin-left: 0.5rem;
   padding: 0;
 }
 #page-header:not(.is-top-bar) #nav-totop a {
@@ -483,7 +491,9 @@ center#name-container {
 div#navbar {
   display: flex;
   max-width: 1200px;
-  width: 100%;
+  border-radius: 100vh;
+  background: #000;
+  height: 40px;
   position: relative;
   padding: 0 .7rem;
   align-items: center;

@@ -5,26 +5,14 @@
   width: 100%
   background-color: var(--heo-theme)
   background-position: center center
-  box-shadow: 
-    inset 0 -13vh 100vh 0 var(--cover-box-shadow-color), 
-    inset 20vw 0 100vw 0 var(--cover-box-shadow-color), 
-    inset -11vw 0 100vh 0 var(--cover-box-shadow-color), 
-    inset 0 9vh 100vh 0 var(--cover-box-shadow-color)
   background-size: cover
   background-repeat: no-repeat
   transition: all .5s
-  +maxwidth768
-    box-shadow: 
-      inset 0 -1vh 100vh 0 var(--cover-box-shadow-color),
-      inset 8vw 0 100vw 0 var(--cover-box-shadow-color),
-      inset -2vw 0 100vh 0 var(--cover-box-shadow-color),
-      inset 0 1vh 100vh 0 var(--cover-box-shadow-color)
 
   &:not(.not-top-img):before
     position: absolute
     width: 100%
     height: 100%
-    background-color: alpha($dark-black, .3)
     content: ''
 
   // index
@@ -108,8 +96,8 @@
     height: 550px
 
     &:before
-      backdrop-filter: saturate(180%) blur(15px)
-      -webkit-backdrop-filter: saturate(180%) blur(15px)
+      backdrop-filter: saturate(180%) blur(25px)
+      -webkit-backdrop-filter: saturate(180%) blur(25px)
 
   #post-info
     position: absolute
@@ -132,7 +120,7 @@
       box-shadow: 0 5px 6px -5px rgba(133, 133, 133, .6)
 
       a
-        color: var(--font-color)
+        color: #fff
         text-shadow: none
 
   &.nav-fixed
@@ -147,7 +135,7 @@
       a,
       #site-name,
       #toggle-menu
-        color: var(--font-color)
+        color: #fff
         text-shadow: none
 
         &:hover
@@ -254,8 +242,6 @@
   &.show
     opacity: 1
 
-  #blog_name
-    flex: 1
 
   #toggle-menu
     display: none
@@ -277,9 +263,11 @@
     cursor: pointer
 
   .menus_items
+    margin: 0 10px 0 6px
     display: inline
 
     .menus_item
+      height 25px
       position: relative
       display: inline-block
       padding: 0 0 0 14px
@@ -317,23 +305,20 @@
 
         li
           list-style: none
+          border-radius: 100vh
+          height 25px
+          
 
           &:hover
-            background: var(--text-bg-hover)
-
-          &:first-child
-            border-top-left-radius: 5px
-            border-top-right-radius: 5px
-
-          &:last-child
-            border-bottom-right-radius: 5px
-            border-bottom-left-radius: 5px
+            background: #fff
+            color #000
 
           a
-            display: inline-block
+            display: flex
             padding: 8px 16px
             width: 100%
-            color: var(--font-color) !important
+            align-items: center
+            color: #fff !important
             text-shadow: none !important
 
   &.hide-menu

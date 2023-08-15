@@ -24,30 +24,44 @@
 
 #console-pannel
     position: fixed
-    bottom: 145px
+    top: -100px
     display: block
-    z-index: 10002
-    background: var(--heo-theme)
-    transition: right .5s
-    color: var(--heo-font)
-    width: 115px
-    right: -115px
+    transition: top .5s
+    color: #fff
+    width: 100%
     height: fit-content
-    padding: 10px
     border-radius: 20px
     font-weight: 600
-    border: 2px solid #e3e8f7
-
-[data-theme="dark"] #console-pannel
-    border: 2px solid #3d3d3f
+    #pannel
+      max-width: 410px
+      align-items: center
+      display flex
+      justify-content: center
+      margin: auto
+      border-radius: 100vh
+      padding: 10px
 
 #console-pannel .console-item .console-button
     display: flex
+    justify-content: center
+    flex-flow: column
+    text-align: center
+
+#console-pannel .console-item
+    width: 80px
+    height 80px
+    display flex
+    align-items: center
+    margin: 0 1%
+    background: #0006
+    border-radius: 20px
+    justify-content: center
+    backdrop-filter: blur(20px) saturate(180%)
+    -webkit-backdrop-filter: blur(20px) saturate(180%)
 
 #console-pannel .console-item .console-button i
-    flex: 1
-    margin-right: 4px
-    line-height: 2
+  font-size: 25px
+  flex: 1
 
 #console-pannel .close-button
     right: 20px
@@ -70,37 +84,39 @@
   background: #3d3d3d
   border: 2.5px solid #F2B94B
 
-.totopbutton span#percent
+.totopbutton
+  transition: all .3s
+  span#percent
     font-size: 30px
     justify-content: center
+    width 100%
     align-items: center
     display: flex
     font-weight: 700
+    opacity 1
     color: #fff
     text-shadow: 2px 1px #000
     margin: auto
     z-index inherit
     top: 6px
-    position: relative
-
-.totopbutton i
+    position: absolute
+  i
     font-size: 30px
     justify-content: center
     align-items: center
-    display: none
+    display: flex
     color: #fff
     text-shadow: 2px 1px #000
+    opacity 0
     font-weight: 700
     margin: auto
     z-index inherit
     top: 20px
     position: relative
-
-.totopbutton:hover i
-    display: flex
-
-.totopbutton:hover span#percent
-    display: none
+  &:hover i
+    opacity 1
+  &:hover span#percent
+    opacity 0
 
 .totopbutton .main-hero-waves-area
     width: 100%

@@ -21,3 +21,11 @@ if hexo-config('algolia_search.enable')
 if hexo-config('local_search') && hexo-config('local_search.enable')
   @import '_search/index'
   @import '_search/local-search'
+
+if hexo-config('post_double_row') == true
+  @import 'post-double-row.css'
+else
+  #recent-posts>.recent-post-item
+    height: 223px
+    +maxwidth768()
+      height: 350px

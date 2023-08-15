@@ -76,25 +76,23 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       i.fas.fa-arrow-up
       span#percent 0
       include ./waves.pug
-    #console_open_close_btn(onclick='showconsolebtn()')
-      i.fas.fa-gear.fa-spin
     #console-pannel
-      | 控制台
-      .console-item
-        .console-button(onclick='hideaside()')
-          i.fas.fa-arrows-alt-h
-          .text 侧栏隐显
-      .console-item
-        .console-button(onclick='toggleTheme()')
-          i.fas.fa-adjust
-          .text 暗色模式
-      .console-item
-        .console-button(onclick='hidehometop()')
-          i.fas.fa-grip-vertical
-          .text 顶部隐显
-      .console-item
-        .console-button(onclick='toRandomPost()')
-          i.fas.fa-shuffle
-          .text 随机文章
+      #pannel
+        .console-item
+          .console-button(onclick='hideaside()')
+            i.fas.fa-arrows-alt-h
+            .text 侧栏隐显
+        .console-item
+          .console-button(onclick='toggleTheme()')
+            i.fas.fa-adjust
+            .text 暗色模式
+        .console-item
+          .console-button(onclick='hidehometop()')
+            i.fas.fa-grip-vertical
+            .text 顶部隐显
+        .console-item
+          .console-button(onclick='toRandomPost()')
+            i.fas.fa-shuffle
+            .text 随机文章
     script(src="/js/custom.js")
     script(src="/js/random.js")
