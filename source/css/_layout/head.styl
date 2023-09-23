@@ -102,6 +102,7 @@
   #post-info
     position: absolute
     bottom: 35%
+    padding: 0 0 0 20px
     max-width: 1200px
     width: 100%
     text-align: left
@@ -274,7 +275,8 @@
 
       &:hover
         .menus_item_child
-          display: block
+          display: flex
+          scale: 1
 
         & > a > i:last-child
           transform: rotate(180deg)
@@ -286,14 +288,19 @@
       .menus_item_child
         position: absolute
         right: 0
-        display: none
+        display: flex
+        flex-direction: column
+        border-radius: 20px
+        scale: 0
+        transition: .25s cubic-bezier(0.25, 0.1, 0.62, 1.7)
+        background: #000 !important
         margin-top: 8px
         padding: 0
         width: max-content
         border-radius: 5px
         background-color: var(--sidebar-bg)
         box-shadow: 0 5px 20px -4px rgba($dark-black, .5)
-        animation: sub_menus .3s .1s ease both
+        transform: translateY(0) !important
 
         &:before
           position: absolute

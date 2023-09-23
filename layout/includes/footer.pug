@@ -1,52 +1,33 @@
-#footer_deal
-  if theme.footer.footer_icons.enable
-      each i in theme.footer.footer_icons.left
-        if i.class == "in"
-          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-        else if i.class == "out"
-          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-        else 
-          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-  img.footer_mini_logo.entered.loading(title='返回顶部' onclick='btf.scrollToDest(0, 500)' src=`${theme.footer.footer_logo.url}` data-ll-status='loading')
-  if theme.footer.footer_icons.enable
-      each i in theme.footer.footer_icons.right 
-        if i.class == "in"
-          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-        else if i.class == "out"
-          a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-        else 
-          a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
-            i(class=`${i.icon}`)
-#Jay-footer
-  each item in theme.footer.footer_group.footer_group_link
-    .footer-group
-        h3.footer-title=item.group_title
-            .footer-links
-              each i in item.footer_links
-                if i.class == "in"
-                  a.footer-item(href=`${i.link}`)=i.text
-                else if i.class == "out"
-                  a.footer-item(target='_blank', href=`${i.link}`)=i.text
-                else 
-                  a.footer-item(href=`${i.link}`)=i.text
-#footer-banner
-  .footer-banner-links
-    .footer-banner-left
-      .footer-banner-left
-        #footer-banner-tips=`${theme.footer.text}`
-
-    .footer-banner-right
-      a.footer-banner-link(href="https://hexo.io/zh-cn/" title="Hexo")=theme.footer.framework
-      a.footer-banner-link |
-      a.footer-banner-link(href="/archives/49841/" title="theme") 主题：Dynasty
-      a.footer-banner-link |
-      a.footer-banner-link(href="/about/" title="about") 关于
-      a.footer-banner-link |
-      a.footer-banner-link.cc(href="/cc/" title="cc协议")
-        i.fab.fa-creative-commons
-        span 协议。
+.footer
+  #in
+    .title
+      img(src=url_for(theme.footer.footer_logo.url) style='border-radius:100vh;box-shadow:0 8px 12px -3px #4259ef23')
+    .author
+      span.name=config.author
+      .descr=config.subtitle
+      if theme.footer.footer_icons.enable
+        .links
+          each i in theme.footer.footer_icons.icons
+            if i.class == "in"
+              a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+                i(class=`${i.icon}` style='font-size:25px')
+            else if i.class == "out"
+              a.deal_link(target='_blank', rel='noopener external nofollow', href=`${i.link}`, title=`${i.desrc}`)
+                i(class=`${i.icon}` style='font-size:25px')
+            else 
+              a.deal_link(href=`${i.link}`, title=`${i.desrc}`)
+                i(class=`${i.icon}` style='font-size:25px')
+      about.about
+        a.footer-button(href="/about/" style='box-shadow:0 8px 12px -3px #ee7d7936;background:#F04A63;border-radius:100vh;')
+          i.dys.caozuo-wailian
+          span 了解更多
+        a.footer-button(href="/cc/" style='box-shadow:0 8px 12px -3px #87ee7936;background:#57BD6A;border-radius:100vh;')
+          i.dys.creativecommons
+          span 转载协议
+      div.frame
+        span HEXO
+        i.dys.heart-beat(style='font-size:20px')
+        span Dynasty
+      //- p(style="margin:5px 10px 5px 10px;height:20px")
+        a.active(href="https://cdnnb.cn")
+          img(src="https://img.shields.io/badge/本站由失控的防御系统提供加速防御支持-green?style=flat&logo=Claris")

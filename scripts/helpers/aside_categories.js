@@ -87,7 +87,7 @@ hexo.extend.helper.register('aside_categories', function (categories, options) {
   }
 
   return `<div class="item-headline">
-            <i class="fas fa-folder-open"></i>
+            <i class="dys apps"></i>
             <span>${this._p('aside.card_categories')}</span>
             ${moreButton()}
             </div>

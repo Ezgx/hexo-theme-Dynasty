@@ -1,7 +1,5 @@
 - var hometop = theme.hometop
 - var fposts = theme.hometop.featured_posts
-- const { effect,loop,source,sub,startDelay,typeSpeed,backSpeed } = theme.hometop
-- let subContent = subtitle || new Array()
 
 .hometop
   .hometopin
@@ -10,7 +8,10 @@
         .in
           span.title=hometop.title.title
           .subtitle
-            .swiper-container.sublist
+            - var loadSubJs = true
+            span#subtitle
+            span ▂
+            //- .swiper-container.sublist
               .swiper-wrapper
                 each item in hometop.subtitle
                   .swiper-slide=`${item}`
@@ -29,16 +30,17 @@
             !=getarray_bar("category")
           a.category-bar-more(href=url_for(fposts.categroies_more_url)) 更多分类
       .group1
-        .recent-top-post-group#recent-top-post-group.hometop_item
+        include swiper.pug
+        //- .recent-top-post-group#recent-top-post-group.hometop_item
             .recent-post-top#recent-post-top
                 .topGroup#topGroup
                     if fposts.posts 
                         each i in fposts.posts
-                            .recent-post-item#recent-post-item
+                            .recent-post-item#recent-post-item(onclick=`pjax.loadUrl('${url_for(i.link)}')`)
                                 .post_cover.left_radius
                                     a(href=url_for(i.link), title=i.title)
                                         img.post_bg.entered.loaded(src=url_for(i.cover) onerror="this.onerror=null,this.src='/img/404.png'")
-                                .recent-post-info(href=url_for(i.link))
+                                .recent-post-info
                                     a.article-title(href=url_for(i.link), title=i.title)= i.title
         if hometop.style === 1
           .hometop-webinfo.hometop_item
@@ -89,20 +91,3 @@
         use(href='#gentle-wave', x='48', y='3')
         use(href='#gentle-wave', x='48', y='5')
         use(href='#gentle-wave', x='48', y='7')
-
-- subContent = subContent.length ? subContent : new Array(config.subtitle)
-//- script.
-  function subtitleType () {
-    if (!{effect}) { 
-      window.typed = new Typed(".subtitle", {
-        strings: !{JSON.stringify(subContent)},
-        startDelay: !{startDelay},
-        typeSpeed: !{typeSpeed},
-        loop: !{loop},
-        backSpeed: !{backSpeed}
-      })
-    } else {
-      document.getElementById("subtitle").innerHTML = '!{subContent[0]}'
-    }
-  }
-  subtitleType()

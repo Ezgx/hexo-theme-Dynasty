@@ -77,6 +77,7 @@ hrl.line {
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
+    position: absolute;
   }
   
   ::-webkit-scrollbar-track {
@@ -86,16 +87,7 @@ hrl.line {
   
   ::-webkit-scrollbar-thumb {
     background: var(--cover-box-shadow-color);
-    background-image: -webkit-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.4) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.4) 75%,
-      transparent 75%,
-      transparent
-    );
+    background: var(--heo-theme);
     border-radius: 2em;
   }
   
@@ -134,7 +126,7 @@ main#content-inner {
 }
 
 [data-theme="dark"] #recent-posts>.recent-post-item {
-    background: var(--heo-theme) right !important;
+    background: #2E313D !important;
 }
 
 [data-theme="dark"] #footer-banner {

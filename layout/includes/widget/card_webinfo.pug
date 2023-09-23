@@ -1,32 +1,32 @@
 .card-widget.card-webinfo
-  .item-headline
-    i.fas.fa-chart-line.fa-bounce
+  .item-headline(style='width:fit-content;margin:auto;')
+    i.dys.shujukanban(style='font-size:20px;margin-right:5px')
     span= _p('aside.card_webinfo.headline')
   .webinfo
     .webinfo-item
       .item-name
-        i.fas.fa-folder-open.fa-beat
+        i.dys.-disk(style='font-size:20px')
         .text 文章总数
       .item-count= site.posts.length
     .webinfo-item
       .item-name
-        i.fas.fa-eye.fa-shake
+        i.dys.view(style='font-size:20px')
         .text 总访问量
       .item-count#busuanzi_value_site_pv
     .webinfo-item
       .item-name
-        i.fas.fa-user.fa-shake
+        i.dys.groupico(style='font-size:20px')
         .text 访问人次
       .item-count#busuanzi_value_site_uv
     .webinfo-item
       .item-name
-        i.fas.fa-pen-to-square.fa-beat
+        i.dys.postico(style='font-size:20px')
         .text 全站字数
       .item-count=totalcount(site)
     .webinfo-item
       .item-name
-        i.fas.fa-upload.fa-shake
+        i.dys.upload(style='font-size:20px')
         .text 最后更新
       .item-count#last-push-date(data-lastPushDate=date_xml(Date.now()))
-        i.fa-solid.fa-spinner.fa-spin
+        i.dys.spinner3.spin.ani
 

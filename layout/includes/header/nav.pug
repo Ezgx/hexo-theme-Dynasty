@@ -6,36 +6,45 @@ nav#nav
       span#blog_name
         a#site-name(href=url_for('/'))
           .title #[=theme.nav.title.title]
-          i.fa-solid.fa-house
+          i.dys.home
     else
       span#blog_name(style="margin-left:-5px;height:30px;width:30px")
         a#site-name(href=url_for('/'))
           img(src=url_for(theme.nav.title.title) style="width:30px;height:30px;border-radius:100vh;")
-      #toggle-menu(style='margin:auto;')
+
+    .nav-menus#nav-menus
+      #toggle-menu(style='margin:0 10px 0 5px;')
         a.site-page(style='display:flex; align-items:center; height:35px;')
-          i.fas.fa-bars-progress.fa-fw
+          i.dys.apps(style='font-size: 25px;')
           | 菜单
 
-    !=partial('includes/header/menu_item', {}, {cache: true})
+      !=partial('includes/header/menu_item', {}, {cache: true})
+
+    .notebar#notebar
 
     a.link(href="https://travellings.cn/go.html" style='margin-right:10px')
-      i.fas.fa-bus
+      i.dys.tower(style='font-size: 22px;')
+
     if (theme.algolia_search.enable || theme.local_search.enable)
       div.nav-button#search-button
         a.site-page.social-icon.search
           .search-button-text
-            i.fas.fa-search.fa-fw
+            i.dys.searchico(style='font-size:25px')
             //- span 搜索
     else
-          div.nav-button
-            a.site-page.social-icon.search
-              .search-button-text
-                i.fas.fa-search.fa-fw
-                span 未开启
+      div.nav-button
+        a.site-page.social-icon.search
+          .search-button-text
+            i.dys.searchico(style='font-size:25px')
+            span 未开启
+    //- div.nav-button
+      a.link(onclick='showconsolebtn()')
+        i.dys.apps(style='font-size: 26px;')
 
-  #buttons
-    a.link(onclick='showconsolebtn()')
-      i.fas.fa-gear.fa-spin
+  #buttons.conbtn(onclick='btf.scrollToDest(0,500)')
+    a.link
+      i.dys.arrowup(style='font-size: 26px;')
+      span#percent
       
 
 

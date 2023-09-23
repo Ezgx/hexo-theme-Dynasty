@@ -16,23 +16,23 @@ mixin postUI(posts)
         .article-meta-wrap
           if (is_home() && (article.top || article.sticky > 0))
             span.article-meta
-              i.fas.fa-thumbtack.sticky
+              i.dys.nail
               span.sticky= _p('sticky')
               span.article-meta-separator |
           if (theme.post_meta.page.date_type)
             span.post-meta-date
               if (theme.post_meta.page.date_type === 'both')
-                i.far.fa-calendar-alt
+                i.dys.time
                 span.article-meta-label=_p('post.created')
                 time.post-meta-date-created(datetime=date_xml(article.date) title=_p('post.created') + ' ' + full_date(article.date))=date(article.date, config.date_format)
                 span.article-meta-separator |
-                i.fas.fa-history
+                i.dys.archives
                 span.article-meta-label=_p('post.updated')
                 time.post-meta-date-updated(datetime=date_xml(article.updated) title=_p('post.updated') + ' ' + full_date(article.updated))=date(article.updated, config.date_format)
               else
                 - let data_type_updated = theme.post_meta.page.date_type === 'updated'
                 - let date_type = data_type_updated ? 'updated' : 'date'
-                - let date_icon = data_type_updated ? 'fas fa-history' :'far fa-calendar-alt'
+                - let date_icon = data_type_updated ? 'fas fa-history' :'dys time'
                 - let date_title = data_type_updated ? _p('post.updated') : _p('post.created')
                 i(class=date_icon)
                 span.article-meta-label=date_title
@@ -40,7 +40,7 @@ mixin postUI(posts)
           if (theme.post_meta.page.categories && article.categories.data.length > 0)
             span.article-meta
               span.article-meta-separator |
-              i.fas.fa-inbox
+              i.dys.archives
               each item, index in article.categories.data
                 a(href=url_for(item.path)).article-meta__categories #[=item.name]
                 if (index < article.categories.data.length - 1)
@@ -48,7 +48,7 @@ mixin postUI(posts)
           if (theme.post_meta.page.tags && article.tags.data.length > 0)
             span.article-meta.tags
               span.article-meta-separator |
-              i.fas.fa-tag
+              i.dys.tag
               each item, index in article.tags.data
                 a(href=url_for(item.path)).article-meta__tags #[=item.name]
                 if (index < article.tags.data.length - 1)
@@ -58,7 +58,7 @@ mixin postUI(posts)
             - needLoadCountJs = true
             span.article-meta
               span.article-meta-separator |
-              i.fas.fa-comments
+              i.dys.comment
               if block
                 block
               span.article-meta-label= ' ' + _p('card_post_count')
@@ -68,26 +68,26 @@ mixin postUI(posts)
               when 'Disqus'
                 +countBlockInIndex
                   a(href=full_url_for(link) + '#disqus_thread')
-                    i.fa-solid.fa-spinner.fa-spin
+                    i.dys.spinner3.spin.ani
               when 'Disqusjs'
                 +countBlockInIndex
                   a(href=full_url_for(link) + '#disqusjs')
                     span.disqus-comment-count(data-disqus-url=full_url_for(link))
-                      i.fa-solid.fa-spinner.fa-spin
+                      i.dys.spinner3.spin.ani
               when 'Valine'
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
                     span.valine-comment-count(data-xid=url_for(link))
-                      i.fa-solid.fa-spinner.fa-spin
+                      i.dys.spinner3.spin.ani
               when 'Waline'
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
                     span.waline-comment-count(id=url_for(link))
-                      i.fa-solid.fa-spinner.fa-spin
+                      i.dys.spinner3.spin.ani
               when 'Twikoo'
                 +countBlockInIndex
                   a.twikoo-count(href=url_for(link) + '#post-comment')
-                    i.fa-solid.fa-spinner.fa-spin
+                    i.dys.spinner3.spin.ani
               when 'Facebook Comments'
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
@@ -96,12 +96,12 @@ mixin postUI(posts)
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
                     span.remark42__counter(data-url=urlNoIndex(article.permalink))
-                      i.fa-solid.fa-spinner.fa-spin
+                      i.dys.spinner3.spin.ani
               when 'Artalk'
                 +countBlockInIndex
                   a(href=url_for(link) + '#post-comment')
                     span.artalk-count(data-page-key=url_for(link))
-                      i.fa-solid.fa-spinner.fa-spin
+                      i.dys.spinner3.spin.ani
 
     if theme.ad && theme.ad.index
       if (index + 1) % 3 == 0

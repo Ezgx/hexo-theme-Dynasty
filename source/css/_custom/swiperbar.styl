@@ -1,0 +1,171 @@
+.recent-post-item
+  &#swiperBar
+    @media screen and (min-width: 768px)
+        width: 59%;
+    width: 100%
+    margin: 0 1%
+    position: relative
+    #ark-swiper-container
+      width: 100%;
+      border: 2px solid var(--heo-background)
+      box-shadow: 0 0 0 1px var(--heo-background)
+      height: inherit;
+      overflow: hidden;
+      position: relative;
+      border-radius: 15px;
+      .dht-swiper-wrapper
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        .dht-swiper-item
+          position: relative
+          width: 100%;
+          height: 200px;
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+          border-radius: 15px;
+          box-shadow: 0 0 3px inset var(--ark-post-item-box-shadow);
+          .dht-swiper-item-cover
+            filter: brightness(.85)
+            height: 100%;
+            display: flex;
+            position: absolute;  
+            top: 0
+            left: 0       
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 0
+            img
+              object-fit: cover;
+              width: 100%;
+              height: 100%
+              z-index: 1;
+          .dht-swiper-item-time
+            width: 350px;
+            color: #fff;
+            font-size: 25px;
+            text-shadow: 2px 2px 3px black;
+            background: rgba(153, 54, 44,0.8);
+            font-family: 'UnidreamLED';
+            display: flex;
+            position: absolute;
+            height: 30px;
+            top: calc(50% - 15px);
+            left: calc(50% - 175px);
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            span
+              margin: 0 3px
+          .dht-swiper-item-info
+            max-height: 120px
+            height inherit
+            flex-direction: column;
+            height: 100%;
+            display: flex;
+            position: absolute
+            top: 0
+            right: 0           
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 0;
+            a.dht-swiper-item-title
+              width: 100%;
+              height: 80px;
+              color: #fff;
+              text-shadow: 0 0 5px black
+              font-family: 'TaikoMagic';
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .dht-swiper-item-title-link
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                ark_post_item_link_hover()
+            .dht-swiper-item-description
+              color: #fff;
+              display: flex;
+              text-align: start;
+              text-shadow: 0 0 5px black
+              height: 130px;
+              align-items: center;
+              .dht-swiper-item-description-text
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+          .dht-swiper-item-decoration
+            width: 150px;
+            height: 150px;
+            opacity: 0.3;
+            position: absolute;
+            top: calc(50% - 75px);
+            left: calc(50% - 75px);
+            z-index: -1
+      .dht-swiper-pagination
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+//宽屏样式
+@media screen and (min-width:768px)
+  .recent-post-item
+    &#swiperBar
+      height: 164px;
+      #ark-swiper-container
+        .dht-swiper-wrapper
+          .dht-swiper-item
+            .dht-swiper-item-cover
+              width: 100%;
+            .dht-swiper-item-time
+              transform: rotateZ(-45deg);
+            .dht-swiper-item-info
+              width: 100%;
+              a.dht-swiper-item-title
+                padding: 15px 20px 0 60px;
+                font-size: 30px;
+                .dht-swiper-item-title-link
+                  -webkit-line-clamp: 2
+              .dht-swiper-item-description
+                width: 85%
+                margin auto
+                font-size: 16px;
+                line-height: 30px;
+                .dht-swiper-item-description-text
+                  -webkit-line-clamp: 3
+                  width: 100%
+                  text-align: center
+
+@media screen and (max-width:768px)
+  .recent-post-item
+    &#swiperBar
+      height: 200px;
+      padding: 0px 0px
+      #ark-swiper-container
+        .dht-swiper-wrapper
+          .dht-swiper-item
+            .dht-swiper-item-cover
+              width: 100%;
+            .dht-swiper-item-time
+              transform: rotateZ(-60deg);
+            .dht-swiper-item-info
+              width: 100%;
+              padding: 0 30px;
+              a.dht-swiper-item-title
+                padding: 10px 16px 0 45px;
+                font-size: 25px;
+                line-height: 1.3
+                .dht-swiper-item-title-link
+                  -webkit-line-clamp: 2
+              .dht-swiper-item-description
+                padding: 0px 15px 10px 5px;
+                font-size: 17px;
+                .dht-swiper-item-description-text
+                  -webkit-line-clamp: 4
+                  line-height: 1.3

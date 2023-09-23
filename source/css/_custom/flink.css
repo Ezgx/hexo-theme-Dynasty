@@ -11,6 +11,13 @@
     border-top: 3px dashed var(--heo-theme);
     padding-top: 5px;
 }
-.flink .btns a {
-    width: 24% !important;
+@media screen and (min-width: 1024px) {
+    .flink .btns a {
+        width: 24% !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .flink .btns a {
+        width: 100% !important;
+    }
 }

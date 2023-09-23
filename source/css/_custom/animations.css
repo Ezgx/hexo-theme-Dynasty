@@ -5,7 +5,7 @@
   position: relative;
   bottom: -11px;
   top: 12px;
-  z-index: 5;
+  z-index: 0;
 }
 .waves-area .waves-svg {
   width: 100%;
@@ -69,4 +69,19 @@
 
 .post-bg .main-hero-waves-area {
   top: 470px !important;
+}
+
+/* 旋转动画-class-spin */
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(1turn);
+  }
+}
+
+.spin {
+  display: block;
+  animation: rotate 2s linear infinite;
 }

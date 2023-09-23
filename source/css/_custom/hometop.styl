@@ -65,6 +65,8 @@
 .recent-post-top .recent-post-item .recent-post-info
     padding: 0.3rem 0.5rem 0.3rem 0.5rem !important;
     transition: 0.3s;
+    a
+        color: var(--heo-font)
 
 .recent-post-top .recent-post-item .post_cover a
     height: 100px;
@@ -82,7 +84,7 @@
     align-content: center;
     padding-top: .5rem;
     font-weight: bold;
-    font-size: 0.8rem !important;
+    font-size: 17px !important;
     padding: 0 !important;
 
 .hometop img
@@ -93,6 +95,9 @@
     width: 59%
     margin-right: 1%
     display: inline-block
+
+.category-bar-item a, .tag-bar-more, .category-bar-more
+    color: var(--heo-font)
 
 .hometop-webinfo
     display: block
@@ -178,7 +183,6 @@
 .hometop
   content: ''
   position: relative
-  background-attachment: fixed
   top: -90px
   padding-top 70px
   width: 100%
@@ -209,6 +213,7 @@
     width: 100%
     color: hexo-config('hometop.title.color') && unquote(hexo-config('hometop.title.color'))
     align-items: center
+    text-shadow: 0 0 3px #000
     if hexo-config('hometop.style') == 1
         height: 200px
         text-align: center
@@ -232,11 +237,17 @@
 
 .blog-title .subtitle
     font-size: 25px
-    font-weight: 700 
-    height: 1.5em
+    font-weight: 700
+    z-index 0
+    position relative 
+    height: 2em
     overflow: hidden
     .sublist
         height: 100%
+
+@media screen and (max-width: 400px)
+    .blog-title .subtitle
+        font-size: 19px
 
 .inbar img 
     width: 164px

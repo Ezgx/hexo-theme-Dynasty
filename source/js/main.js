@@ -83,30 +83,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
 
     if (isHighlightShrink !== undefined) {
-      highlightShrinkEle = `<i class="fas fa-angle-down expand ${highlightShrinkClass}"></i>`
+      highlightShrinkEle = `<i class="dys arrowdown expand"></i>`
     }
 
     if (isHighlightCopy) {
-      highlightCopyEle = '<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>'
+      highlightCopyEle = '<div class="copy-notice"></div><i class="dys copy1 copy-button"></i>'
     }
 
     const copy = (text, ctx) => {
       if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
         document.execCommand('copy')
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
-          new Vue({
-            data: function () {
-                this.$notify({
-                    title: "复制成功",
-                    message: "转载请遵守cc协议",
-                    position: 'top-left',
-                    offset: 50,
-                    showClose: true,
-                    type: "success",
-                    duration: 4000
-                });
-            }
-          })
+          copytext()
         } else {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success

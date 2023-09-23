@@ -1,13 +1,13 @@
 #aside-content .card-widget {
-    background: transparent !important;
     box-shadow: unset !important;
+    border: 1px solid var(--border);
 }
 
 /* 作者打招呼 */
 div#author-info__sayhi {
   text-align: left;
   color: var(--heo-font);
-  background: var(--heo-white-op);
+  background: var(--heo-white);
   font-size: 12px;
   margin-right: auto;
   padding: 2px 8px;
@@ -115,6 +115,7 @@ div#author-info__sayhi {
   display: flex;
   align-items: center;
   z-index: 1;
+  background-color: var(--heo-background);
   transition: 0.3s;
   cursor: pointer;
 }

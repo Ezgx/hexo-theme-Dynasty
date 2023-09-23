@@ -1,0 +1,26 @@
+- var fposts = theme.hometop.featured_posts
+
+.recent-post-item#swiperBar(style='border:none!important;')
+  #ark-swiper-container
+    .swiper-wrapper.dht-swiper-wrapper
+      each item, i in fposts.posts
+        //- 内容版块
+        .swiper-slide.dht-swiper-item(onclick=`pjax.loadUrl('${url_for(item.link)}')`)
+          //- 封面
+          .dht-swiper-item-cover(onclick=`pjax.loadUrl('${url_for(item.link)}')`)
+            img.article-cover(src=item.cover title='')
+          //- 标题和描述
+          .dht-swiper-item-info(onclick=`pjax.loadUrl('${url_for(item.link)}')`)
+            a.dht-swiper-item-title
+              .dht-swiper-item-title-link= item.title            
+            a.dht-swiper-item-description
+              .dht-swiper-item-description-text=item.descr
+    .swiper-scrollbar
+    .swiper-button-prev
+    .swiper-button-next
+
+    style.
+      #ark-swiper-container .swiper-scrollbar-drag {
+        background: linear-gradient(to left, #ff4500, #ffa500, #ffd700, #90ee90, #0ff, #1e90ff, #9370db, #ff69b4, #ff4500);
+        box-shadow: 0 0 0 2px #fff
+      }

@@ -23,10 +23,12 @@
     color: var(--heo-font)
 
 #console-pannel
+    scale: 0
     position: fixed
-    top: -100px
+    top: calc(50% - (190px/2))
+    z-index 10
     display: block
-    transition: top .5s
+    transition: .2s
     color: #fff
     width: 100%
     height: fit-content
@@ -35,11 +37,25 @@
     #pannel
       max-width: 410px
       align-items: center
-      display flex
+      background: #000000b5
+      display grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(2, 1fr)
+      grid-gap: 50px
+      width fit-content
       justify-content: center
       margin: auto
-      border-radius: 100vh
+      border-radius: 20px
       padding: 10px
+      &::after
+        content: '';
+        left: calc(50% - (45px / 2));
+        position: absolute;
+        border-radius: 100vh;
+        background: #fff;
+        height: 45px;
+        box-shadow: 0 0 0 5px rgba(255,255,255,.22), inset 0 0 0 5px #aaa;
+        width: 45px;
 
 #console-pannel .console-item .console-button
     display: flex
@@ -53,15 +69,15 @@
     display flex
     align-items: center
     margin: 0 1%
-    background: #0006
     border-radius: 20px
     justify-content: center
-    backdrop-filter: blur(20px) saturate(180%)
-    -webkit-backdrop-filter: blur(20px) saturate(180%)
 
 #console-pannel .console-item .console-button i
   font-size: 25px
-  flex: 1
+  height 40px
+  display: flex
+  align-items: center
+  justify-content: center
 
 #console-pannel .close-button
     right: 20px
@@ -72,51 +88,69 @@
     bottom: 15px
     overflow: hidden
     right: 15px
-    background: #94ddee
+    background: #000000b5
     border-radius: 100vh
-    border: 2.5px solid #00d0ff
-    height: 80px
-    width: 80px
+    height: 62px
+    width: 62px
     z-index: 10000
     user-select: none
 
 [data-theme="dark"] .totopbutton
   background: #3d3d3d
-  border: 2.5px solid #F2B94B
+  border: 1px solid #9A515A
 
 .totopbutton
-  transition: all .3s
-  span#percent
+  i
+    justify-content: center
+    align-items: center
+    display: flex
+    color: #fff
+    background: #fff
+    width: 40px
+    height: 40px
+    box-shadow: 0 0 0 5px #ffffff38, inset 0 0 0 5px #aaa
+    text-shadow: 2px 1px #000
+    font-weight: 700
+    border-radius: 100vh
+    margin: auto
+    z-index inherit
+    top: calc(50% - (40px / 2))
+    position: relative
     font-size: 30px
+
+.conbtn a
+  span#percent
     justify-content: center
     width 100%
     align-items: center
     display: flex
     font-weight: 700
-    opacity 1
+    scale: 1
+    transition: .2s
     color: #fff
     text-shadow: 2px 1px #000
     margin: auto
     z-index inherit
-    top: 6px
-    position: absolute
+    position: relative
   i
-    font-size: 30px
     justify-content: center
     align-items: center
     display: flex
     color: #fff
     text-shadow: 2px 1px #000
-    opacity 0
+    scale: 0
+    transition: .2s
+    left 7px
     font-weight: 700
     margin: auto
     z-index inherit
-    top: 20px
-    position: relative
+    top: -6px
+    position: absolute
+.conbtn
   &:hover i
-    opacity 1
+    scale: 1
   &:hover span#percent
-    opacity 0
+    scale: 0
 
 .totopbutton .main-hero-waves-area
     width: 100%
@@ -135,10 +169,10 @@
 
 [data-theme="dark"] .totopbutton .main-hero-waves-area
     .parallax>use:nth-child(1)
-      fill: #F2B94Bbd
+      fill: #9A515Abd
     .parallax>use:nth-child(2)
-      fill: #F2B94B82
+      fill: #9A515A82
     .parallax>use:nth-child(3)
-      fill: #F2B94B36
+      fill: #9A515A36
     .parallax>use:nth-child(4)
-      fill: #F2B94B
+      fill: #9A515A

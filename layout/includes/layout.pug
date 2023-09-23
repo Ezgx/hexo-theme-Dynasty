@@ -7,16 +7,15 @@ doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
   head
     include ./head.pug
-    script(src='/js/fish.load.js')
     link(rel="stylesheet", href="/css/color.css")
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css")
-    link(rel='preload' as='font' type='font/ttf' href='/font/alifangyuan.ttf' crossorigin='anonymous')
+    //- link(rel='preload' as='font' type='font/ttf' href='/font/alifangyuan.ttf' crossorigin='anonymous')
     link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
-    script(src=" https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js")
+    script(src=" https://unpkg.com/jquery@3.7.0/dist/jquery.min.js")
     script(async='' src='/js/vue.min.js')
     script(async='' src='/js/element-ui.js')
     script(async='' data-pjax='' src="/js/scroll.js")
-    script(async='' data-pjax='' src="/js/vue-bar.js") 
+    script(async='' data-pjax='' src="/js/vue-bar.js")
   body
     script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js")
     if theme.preloader.enable
@@ -43,6 +42,10 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
                 include widget/index.pug
                 if (is_page())
                   block content
+          
+          
+
+
         else
           main#content-inner.layout(class=hideAside)
             if body
@@ -63,8 +66,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
         else
           - var footer_bg = ''
 
-        footer#footer(style=footer_bg)
-          !=partial('includes/footer', {}, {cache: true})
+        !=partial('includes/footer', {}, {cache: true})
 
     else
       include ./404.pug
@@ -72,27 +74,25 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
     include ./rightside.pug
     !=partial('includes/third-party/search/index', {}, {cache: true})
     include ./additional-js.pug
-    .totopbutton(onclick="btf.scrollToDest(0,500)")
-      i.fas.fa-arrow-up
-      span#percent 0
-      include ./waves.pug
+    .totopbutton#totopbtn(onclick="showconsolebtn()")
+      i
     #console-pannel
       #pannel
         .console-item
           .console-button(onclick='hideaside()')
-            i.fas.fa-arrows-alt-h
+            i.dys.server
             .text 侧栏隐显
         .console-item
           .console-button(onclick='toggleTheme()')
-            i.fas.fa-adjust
+            i.dys.yueliang
             .text 暗色模式
         .console-item
           .console-button(onclick='hidehometop()')
-            i.fas.fa-grip-vertical
+            i.dys.nail
             .text 顶部隐显
         .console-item
           .console-button(onclick='toRandomPost()')
-            i.fas.fa-shuffle
+            i.dys.shuffle
             .text 随机文章
     script(src="/js/custom.js")
     script(src="/js/random.js")

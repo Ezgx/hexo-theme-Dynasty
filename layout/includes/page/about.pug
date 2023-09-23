@@ -48,25 +48,39 @@
         .skills-style-group
           .tags-group-all
             .tags-group-wrapper
-              each i in site.data.creativity
+              //- each i in site.data.creativity
                 - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
                 - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
                 each item, index in i.creativity_list
                   if ((index+1 <= evenNum.length) && (index+1 <= oddNum.length))
-                    .tags-group-icon-pair
-                      .tags-group-icon(style=`background: ${evenNum[index].color}`)
-                        img.no-lightbox(title=evenNum[index].name, src=evenNum[index].icon)
-                      .tags-group-icon(style=`background: ${oddNum[index].color}`)
-                        img.no-lightbox(title=oddNum[index].name, src=oddNum[index].icon)
-          .skills-list
-            each i in site.data.creativity
-              each item, index in i.creativity_list
-                .skill-info
-                  .skill-icon(style=`background: ${item.color}`)
-                    img.no-lightbox(title=item.name, src=item.icon)
-                  .skill-name
-                    span=item.name
-            .etc ...
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #b8f0ae`)
+                  img.no-lightbox(title='vue', src='https://bu.dusays.com/2023/04/09/643293b6788bd.png')
+                .tags-group-icon(style=`background: #222`)
+                  img.no-lightbox(title='React', src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K')
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #57b6e6`)
+                  img.no-lightbox(title='Docker', src='https://bu.dusays.com/2023/04/28/644bdead5d78f.webp')
+                .tags-group-icon(style=`background: #4082c3`)
+                  img.no-lightbox(title='Photoshop', src='https://bu.dusays.com/2023/04/28/644bdead69ce6.webp')
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #b8f0ae`)
+                  img.no-lightbox(title='Node', src='https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg')
+                .tags-group-icon(style=`background: #000`)
+                  img.no-lightbox(title='Python', src='https://bu.dusays.com/2023/04/28/644bdead6dc5f.webp')
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #937df7`)
+                  img.no-lightbox(title='vite', src='https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/vite-logo.svg')
+                .tags-group-icon(style=`background: #2c51db`)
+                  img.no-lightbox(title='css3', src='https://bu.dusays.com/2023/04/21/644284024536b.webp')
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #f7cb4f`)
+                  img.no-lightbox(title='JS', src='https://bu.dusays.com/2023/04/21/6442840245873.webp')
+                .tags-group-icon(style=`background: #e9572b`)
+                  img.no-lightbox(title='HTML', src='https://bu.dusays.com/2023/04/21/6442840244ea8.webp')
+              .tags-group-icon-pair
+                .tags-group-icon(style=`background: #df5b40`)
+                  img.no-lightbox(title='Git', src='https://bu.dusays.com/2023/04/21/6442840245495.webp')
     .author-content-item.careers
       .card-content
         .author-content-item-tips 生涯
@@ -80,8 +94,8 @@
   .author-content
     .author-content-item.personalities
       .author-content-item-tips 人格
-      span.author-content-item-title=`${theme.about_page.personalities}`
-      .title2(style='color:#ac899c') INTP-A
+      span.author-content-item-title=`${theme.about_page.personalities_name}`
+      .title2(style='color:#ac899c')=theme.about_page.personalities_type
       .post-tips
         | 在
         a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
@@ -129,22 +143,15 @@
       .author-content-item-tips 致谢
       span.author-content-item-title 赞赏名单
       .author-content-item-description 感谢因为有你们，让我更加有创作的动力。
-        each i in site.data.reward
-          - let rawData = [...i.reward_list]
-          .reward-list-all
-            - let reward_list_amount = i.reward_list.sort((a,b)=>b.amount -  a.amount)
-            each item, index in reward_list_amount
-              .reward-list-item
-                .reward-list-item-name=item.name
-                .reward-list-bottom-group
-                  if item.amount >= 50
-                    .reward-list-item-money(style='background:var(--anzhiyu-yellow)')=`¥${item.amount}`
-                  else
-                    .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
-                  .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
-          .reward-list-updateDate
-            | 最新更新时间：
-            time.datatime.reward-list-updateDate-time(datatime=rawData[0].datatime)=new Date(rawData[0].datatime).toISOString().slice(0, -14)
+        each item in theme.about_page.reward
+          .reward-list-item
+            .reward-list-item-name=item.name
+            .reward-list-bottom-group
+              if item.amount >= 50
+                .reward-list-item-money(style='background:#FFC93E')=`¥${item.amount}`
+              else
+                .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
+              .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
 
 script.
   (() => {

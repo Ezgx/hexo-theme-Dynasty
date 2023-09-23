@@ -1233,12 +1233,6 @@
     transform: translateX(-50%);
   }
 }
-.author-content-item.skills:hover .skills-style-group .tags-group-all {
-  opacity: 0;
-}
-.author-content-item.skills:hover .skills-style-group .skills-list {
-  opacity: 1;
-}
 
 .site-card-group .site-card .info {
   margin-top: 0;

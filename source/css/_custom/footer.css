@@ -34,8 +34,7 @@ div#footer_deal {
 
 a.deal_link {
     display: flex;
-    margin: 1rem 27px;
-    color: var(--Jay-card-bg);
+    margin: 10px 15px 5px;
     border-radius: 3rem;
     width: 32px;
     height: 32px;
@@ -46,8 +45,7 @@ a.deal_link {
 }
 
 a.deal_link:hover {
-    color: var(--Jay-white);
-    background: var(--Jay-main)
+    scale: 1.3;
 }
 
 img.footer_mini_logo {

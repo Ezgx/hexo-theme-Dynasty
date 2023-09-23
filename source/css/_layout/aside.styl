@@ -69,6 +69,8 @@
         padding-left: 10px
 
   .item-headline
+    width: fit-content
+    margin auto !important
     padding-bottom: 6px
     font-size: 1.2em
 
@@ -300,21 +302,25 @@
         color: #FF0000
 
 .avatar-img
-  overflow: hidden
   margin: 0 auto
   width: 110px
   height: 110px
   border: 4px solid #fff
   border-radius: 70px
+  transition: .3s
+
+  &:hover
+    transform: scale(1.1)
+
+  .loading-image-dot
+    img
+      transform: rotate(-25deg)
 
   img
     width: 100%
     height: 100%
-    transition: filter 375ms ease-in .2s, transform .3s
+    border-radius: 100%
     object-fit: cover
-
-    &:hover
-      transform: rotate(360deg)
 
 .site-data
   display: table

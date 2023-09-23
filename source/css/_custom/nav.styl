@@ -7,6 +7,13 @@
 #nav-totop:hover .totopbtn i {
   opacity: 1;
 }
+span#blog_name {
+  display: block;
+  animation: rotate 2s linear infinite;
+}
+span#blog_name:hover {
+  animation: none;
+}
 #nav-totop #percent {
   font-size: 12px;
   background: var(--anzhiyu-white);
@@ -146,13 +153,16 @@ ul.menus_item_child {
 
 #nav #buttons {
   height: 40px;
+  z-index: -1;
   align-items: center;
   display: flex;
   justify-content: center;
   min-width: 40px;
+  left: calc(100% + 7px);
+  transition: .2s cubic-bezier(0.09, -0.01, 0.01, 2.05);
   border-radius: 100vh;
+  position: absolute;
   background: #000;
-  margin-left: 10px;
 }
 
 #nav .menus_items .menus_item:hover .menus_item_child {
@@ -176,6 +186,7 @@ ul.menus_item_child {
 #nav .menus_items .menus_item {
   border-radius: 100vh;
   justify-content: center;
+  font-size: 23px;
   padding: 0 10px !important;
 }
 #nav .menus_items .menus_item .menus_item_child {
@@ -443,12 +454,6 @@ center#name-container {
   cursor: pointer;
   position: relative;
 }
-
-@media screen and (min-width: 1300px) {
-  #nav a:hover {
-    transform: scale(1.03);
-  }
-}
 .back-home-button .back-menu-list .back-menu-item:hover .back-menu-item-text {
   color: var(--anzhiyu-white);
 }
@@ -493,9 +498,21 @@ div#navbar {
   max-width: 1200px;
   border-radius: 100vh;
   background: #000;
+  transition: .3s cubic-bezier(0.58, 0.02, 1, 1)
   height: 40px;
   position: relative;
   padding: 0 .7rem;
   align-items: center;
   justify-content: center;
 }
+
+.notebar
+  color: #fff
+  display none
+  margin: auto
+
+#nav-blog-name
+  color: #fff
+  transition: .2s
+  text-wrap: nowrap
+  height: inherit

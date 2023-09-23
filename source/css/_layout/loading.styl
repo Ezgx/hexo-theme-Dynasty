@@ -31,13 +31,18 @@ if hexo-config('preloader')
 .loading-image-dot
   width: 30px;
   height: 30px;
-  background: #6bdf8f;
+  display: flex
+  align-items: center
+  justify-content: center
   position: absolute;
   border-radius: 50%;
   border: 6px solid #fff;
   top: 50%;
   left: 50%;
   transform: translate(18px, 24px);
+  img 
+    height: 26px
+    width: 26px
 
   @keyframes loadingAction
     0% {

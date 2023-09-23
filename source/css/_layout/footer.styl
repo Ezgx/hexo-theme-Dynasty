@@ -1,35 +1,53 @@
-#footer
-  position: relative
-  background: $light-blue
-  background-attachment: scroll
-  background-position: bottom
-  background-size: cover
-
-  if hexo-config('footer_bg') != false
-    &:before
-      position: absolute
-      width: 100%
-      height: 100%
-      background-color: alpha($dark-black, .5)
-      content: ''
-
-#footer-wrap
-  position: relative
-  padding: 40px 20px
-  color: var(--light-grey)
-  text-align: center
-
-  a
-    color: var(--light-grey)
-
-    &:hover
-      text-decoration: underline
-
-  .footer-separator
-    margin: 0 4px
-
-  .icp-icon
-    padding: 0 4px
-    max-height: 1.4em
-    width: auto
-    vertical-align: text-bottom
+.footer
+  padding: 15px
+  #in
+    background: var(--footer-bg)
+    width 100%
+    padding 0 15px 15px 15px
+    text-align: center
+    border: 1px solid var(--border)
+    max-width: 1200px
+    margin: 0 auto 20px
+    border-radius: 18px
+    @media screen and (max-width: 768px)
+      margin: auto !important
+      border-radius: 18px 18px 0 0
+    .title
+      display flex
+      flex-direction: column-reverse
+      text-align: center
+      img
+        position: relative
+        height: 66px
+        width 66px
+        border-radius: 100vh
+        top: -33px
+        left: calc(50% - 33px)
+    .author
+      margin-top -33px
+      text-align: center
+      span.name
+        font-weight: bolder
+        font-size: 25px
+      .links
+        margin-bottom: 20px
+        display flex
+        flex-wrap: wrap
+        justify-content: center
+        a
+          color: var(--heo-font)
+          font-size: 25px
+      .frame
+        margin-top: 20px
+        font-size: 18px
+        font-weight: bolder
+        i
+          margin: 0 3px
+    about.about
+      a.footer-button
+        padding: 15px
+        margin: 6px
+        color: #fff
+        i
+          line-height: 2
+          margin-right: 2px
